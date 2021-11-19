@@ -69,8 +69,8 @@
 		<div id="hitokoto"><script>hitokoto()</script></div>
 		</div>
 		<nav>
-			总文章数 2
-			总字数 <span class="post-count">75</span>
+			总文章数 3
+			总字数 <span class="post-count">896</span>
 		</nav>		
 		<nav> <class="header-smart-menu">
     		
@@ -94,9 +94,7 @@
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" target="_blank" href="/luomochuan.github.io" title="github"><i class="icon-github"></i></a>
-		        
-					<a class="mail" target="_blank" href="/2862844518@qq.com" title="mail"><i class="icon-mail"></i></a>
+					<a class="github" target="_blank" href="https://luomochuan.github.io" title="github"><i class="icon-github"></i></a>
 		        
 			</div>
 		</nav>
@@ -133,9 +131,7 @@
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="/luomochuan.github.io" title="github"><i class="icon-github"></i></a>
-			        
-						<a class="mail" target="_blank" href="/2862844518@qq.com" title="mail"><i class="icon-mail"></i></a>
+						<a class="github" target="_blank" href="https://luomochuan.github.io" title="github"><i class="icon-github"></i></a>
 			        
 				</div>
 			</nav>
@@ -164,6 +160,121 @@
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-mysql" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/post/9520183a.html">mysql</a>
+    </h1>
+  
+
+        
+        <a href="/post/9520183a.html" class="archive-article-date">
+  	<time datetime="2021-11-19T05:08:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-19</time>
+</a>
+		
+        
+      </header>
+	  <div align="center" class="post-count">
+		字数：821字 | 预计阅读时长：3分钟
+	  </div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="第四课时：过滤数据"><a href="#第四课时：过滤数据" class="headerlink" title="第四课时：过滤数据"></a>第四课时：过滤数据</h1><p>主要内容：select和where语句</p>
+<p>注：在select语句中，数据根据where子句指定的搜索条件进行过滤。</p>
+<p>where子句的位置：在同时使用order by 和where子句时，应该让order by位于where之后，                否则会产生错误。</p>
+<p>解释：where子句会将查询到的数据放到内存中。where之后的子句都是在内存中的数据进行操    作。</p>
+<h2 id="where子句的使用"><a href="#where子句的使用" class="headerlink" title="where子句的使用"></a>where子句的使用</h2><h3 id="如何使用引号"><a href="#如何使用引号" class="headerlink" title="如何使用引号"></a>如何使用引号</h3><p>单引号用来限定字符串。如果将值与字符串类型的列进行比较，就需要限定引号。如果与数值列进行比较就不需要单引号。</p>
+<h3 id="范围值检查——between"><a href="#范围值检查——between" class="headerlink" title="范围值检查——between"></a>范围值检查——between</h3><p>语法</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">where</span> <span class="operator">&lt;</span>字段名<span class="operator">&gt;</span> <span class="keyword">between</span> <span class="operator">&lt;</span>开始值<span class="operator">&gt;</span> <span class="keyword">AND</span> <span class="operator">&lt;</span>结束值<span class="operator">&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>这两个值必须使用关键字进行分割。between匹配范围内的所有值，包括起始值与结束值。</p>
+<h3 id="空值检查"><a href="#空值检查" class="headerlink" title="空值检查"></a>空值检查</h3><p>概念：在一个列不包含值时，称其包含空值NULL。</p>
+<p>NULL：无值（no value）它与字段包含0、空字符串或仅包含空格不同。</p>
+<p>语法：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">where</span> cust_email <span class="keyword">is</span> <span class="keyword">null</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>select 语句有一个特殊的where子句，可用来检查具有NULL值的列。这个子句是IS NULL</p>
+</blockquote>
+<blockquote>
+<p>null与不匹配解释：</p>
+<p>​    假设一列有三个值age=11，age=null，age=10。现在需要筛选出年龄不为10的人，则只会筛选出age=11，不会筛选出age=null。</p>
+<p>原文解释：</p>
+<p>​    在通过过滤选择出不具有特定值的行时，你可能希望返回具有NULL值的行。但是，不行。因为未知(NULL)具有特殊的含义，数据库不知道它们是否匹配，所以在匹配过滤或不匹配过滤时不返回它们。因此，在过滤数据时，一定要验证返回数据中确实给出了被过滤列具有NULL的行。</p>
+</blockquote>
+<h1 id="第五课时：高级数据过滤"><a href="#第五课时：高级数据过滤" class="headerlink" title="第五课时：高级数据过滤"></a>第五课时：高级数据过滤</h1><blockquote>
+<p>主要内容：组合where子句。NOT和IN操作符</p>
+</blockquote>
+<h2 id="组合where语句"><a href="#组合where语句" class="headerlink" title="组合where语句"></a>组合where语句</h2><p>SQL允许多个where语句。这些子句有两种使用方式。即以AND子句或OR子句方式使用。</p>
+<h3 id="AND操作符"><a href="#AND操作符" class="headerlink" title="AND操作符"></a>AND操作符</h3><p>作用：给多个where子句添加附加条件。相当于逻辑运算中的“与”操作。</p>
+<p>语法</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">where</span> <span class="operator">&lt;</span>条件<span class="number">1</span><span class="operator">&gt;</span> <span class="keyword">and</span> <span class="operator">&lt;</span>条件<span class="number">2</span><span class="operator">&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">where</span> vend_id <span class="operator">=</span> <span class="string">&#x27;DLL01&#x27;</span> <span class="keyword">and</span> prod_price <span class="operator">&lt;=</span><span class="number">4</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="OR操作符"><a href="#OR操作符" class="headerlink" title="OR操作符"></a>OR操作符</h3><p>作用：相当于逻辑运算中的“或运算”</p>
+<blockquote>
+<p>注：许多DBMS在OR WHERE子句第一个条件得满足的情况下，就不再继续计算第二个条件（即第一个条件满足，直接打印结果）</p>
+</blockquote>
+<p>语法</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">where</span> <span class="operator">&lt;</span>条件<span class="number">1</span><span class="operator">&gt;</span> <span class="keyword">or</span> <span class="operator">&lt;</span>条件<span class="number">2</span><span class="operator">&gt;</span>;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">where</span> vend_id<span class="operator">=</span><span class="string">&#x27;DLL01&#x27;</span> <span class="keyword">or</span> vend_id<span class="operator">=</span><span class="string">&#x27;BRS01&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<h3 id="求值顺序"><a href="#求值顺序" class="headerlink" title="求值顺序"></a>求值顺序</h3><p>where子句可以包含任意数目的AND和OR操作符，并且允许两者结合使用。</p>
+<p>例如：</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">where</span> vend_id<span class="operator">=</span><span class="string">&#x27;DLL01&#x27;</span> <span class="keyword">or</span> vend_id<span class="operator">=</span><span class="string">&#x27;BRS01&#x27;</span> <span class="keyword">AND</span> proc_price<span class="operator">&gt;=</span><span class="number">10</span>;</span><br></pre></td></tr></table></figure>
+
+<p>上述这条命令，我们是想先执行or操作符，然后再执行AND操作符。但是执行结果确实先执行and操作符再执行or操作符。这是因为SQL默认的执行方式会先执行and决定的。我们可以做如下修改，即可达到我们的目的。</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">where</span> （vend_id<span class="operator">=</span><span class="string">&#x27;DLL01&#x27;</span> <span class="keyword">or</span> vend_id<span class="operator">=</span><span class="string">&#x27;BRS01&#x27;</span>）<span class="keyword">AND</span> proc_price<span class="operator">&gt;=</span><span class="number">10</span>;</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/post/9520183a.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
   
     <article id="post-网络" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
