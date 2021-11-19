@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://luomochuan.github.io/post/4592b2fd.html</loc>
+    
+    <lastmod>2021-11-19</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://luomochuan.github.io/post/9520183a.html</loc>
     
     <lastmod>2021-11-19</lastmod>
@@ -59,6 +66,20 @@
     <priority>0.6</priority>
   </url>
   
+  <url>
+    <loc>http://luomochuan.github.io/tags/%E5%BD%92%E6%A1%A3/</loc>
+    <lastmod>2021-11-19</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
 
+  
+  <url>
+    <loc>http://luomochuan.github.io/categories/Linux/</loc>
+    <lastmod>2021-11-19</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
   
 </urlset>
