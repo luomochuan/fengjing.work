@@ -17,7 +17,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="d:/Download/shell.jpeg">
 <meta property="article:published_time" content="2021-11-19T12:05:51.000Z">
-<meta property="article:modified_time" content="2021-11-19T15:23:56.141Z">
+<meta property="article:modified_time" content="2021-11-20T03:56:06.065Z">
 <meta property="article:author" content="fengjing">
 <meta property="article:tag" content="归档">
 <meta name="twitter:card" content="summary">
@@ -65,7 +65,7 @@
 	        
 				<li><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
 	        
-				<li><a href="/%E5%BD%92%E6%A1%A3">归档</a></li>
+				<li><a href="/tags/%E5%BD%92%E6%A1%A3/">归档</a></li>
 	        
 			</ul>
 		</nav>
@@ -75,7 +75,7 @@
 		</div>
 		<nav>
 			总文章数 4
-			总字数 <span class="post-count">2k</span>
+			总字数 <span class="post-count">2.3k</span>
 		</nav>		
 		<nav> <class="header-smart-menu">
     		
@@ -149,7 +149,7 @@
 		        
 					<li style="width: 33.333333333333336%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/%E5%BD%92%E6%A1%A3">归档</a></li>
+					<li style="width: 33.333333333333336%"><a href="/tags/%E5%BD%92%E6%A1%A3/">归档</a></li>
 		        
 				</ul>
 			</nav>
@@ -183,7 +183,7 @@
         
       </header>
 	  <div align="center" class="post-count">
-		字数：1.1k字 | 预计阅读时长：4分钟
+		字数：1.4k字 | 预计阅读时长：5分钟
 	  </div>
     
     <div class="article-entry" itemprop="articleBody">
@@ -237,7 +237,7 @@
 <p>*: 星号是shell中的通配符，匹配所有</p>
 <p>?: 问号是shell中的通配符 匹配除回车以外的一个字符</p>
 <p>;: 分号可在shell中一行执行多个命令，命令之间用分号分割。</p>
-<p>‘’: 反引号 ，命令中执行命令 echo “today is ‘date +%F’”</p>
+<p>``: 反引号 ，命令中执行命令 echo “today is <code>date +%F</code>“</p>
 <p>‘’:单引号，脚本出现的字符串可以用单引号引起来，但是不同于双引号的是，单引号不解释变量。</p>
 <p>“”:双引号，脚本出现的字符串可以用双引号引起来</p>
 <p>$: 变量中取内容符</p>
@@ -259,6 +259,39 @@
 <p>&amp;-：要关闭文件描述符，可以将它重定向到特殊符号&amp;-</p>
 <p>.：点操作符，点操作符是source命令的别名，它会在shell上下文中执行点操作符指定的脚本，而不是创建一个新的shell。</p>
 </blockquote>
+<h2 id="四、shell中管道运用"><a href="#四、shell中管道运用" class="headerlink" title="四、shell中管道运用"></a>四、shell中管道运用</h2><blockquote>
+<p>管道符在shell中使用是最多的，很多组合命令都需要通过命令来组合完成输出。管道其实就是上一个命令的输出作为下一个命令的输入</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ps -aux | grep ssh</span><br><span class="line">root       1136  0.0  0.1 112984  4328 ?        Ss   10:28   0:00 /usr/sbin/sshd -D</span><br><span class="line">root       8902  0.0  0.1 158940  5548 ?        Ss   10:29   0:00 sshd: centos [priv]</span><br><span class="line">centos     8906  0.0  0.0 158940  2520 ?        S    10:29   0:00 sshd: centos@pts/1</span><br><span class="line">root       9181  0.0  0.0 112828   988 pts/1    S+   10:39   0:00 grep --color=auto ssh</span><br></pre></td></tr></table></figure>
+
+<h2 id="五、重定向的使用"><a href="#五、重定向的使用" class="headerlink" title="五、重定向的使用"></a>五、重定向的使用</h2><h3 id="输入重定向："><a href="#输入重定向：" class="headerlink" title="输入重定向："></a>输入重定向：</h3><blockquote>
+<p>将输入的结果重定向到另一个文件中（会覆盖原来的内容）：&gt;</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo aaa &gt; a.txt</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>将前面命令输出的结果追加到后面的文件中（不会覆盖原来的内容）：&gt;&gt;</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo bbb &gt;&gt; a.txt</span><br></pre></td></tr></table></figure>
+
+<h3 id="输出重定向"><a href="#输出重定向" class="headerlink" title="输出重定向"></a>输出重定向</h3><blockquote>
+<p>重定向输出 &lt;</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cat &lt; /etc/passwd</span><br><span class="line">50</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>重定向追加输出：&lt;&lt;</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cat &lt;&lt; eof</span><br><span class="line"><span class="meta">&gt;</span><span class="bash">aaa</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">eof</span></span><br></pre></td></tr></table></figure>
+
+<p>将eof字符之前的字符作为输入传递给cat命令，然后查看输入结果。</p>
+<h3 id="输入输出重定向同时使用"><a href="#输入输出重定向同时使用" class="headerlink" title="输入输出重定向同时使用"></a>输入输出重定向同时使用</h3><blockquote>
+<p>命令格式：命令 &lt; 文件1 &gt; 文件2</p>
+<p>功能：命令把文件1的内容作为标准输入，把文件2作为标准输出。</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat  /etc/passwd  &lt; a  &gt; b.txt</span><br></pre></td></tr></table></figure>
+
+<p>将文件passwdt输入重定向到a，输出重定向到b.txt文件</p>
 
       
 
