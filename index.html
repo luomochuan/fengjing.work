@@ -30,15 +30,35 @@
       background: linear-gradient(200deg,#a0cfe4,#e8c37e);
     }
   </style>
+  <!-- Js控制Loding特效-->
+<script>
+  //监听加载状态改变
+  document.onreadystatechange = completeLoading;
+  
+  //加载状态为complete时移除loading效果
+  function completeLoading() {
+      if (document.readyState == "complete") {
+          var loadingMask = document.getElementById('loader-wrapper');
+          loadingMask.parentNode.removeChild(loadingMask);
+      }
+  }  
+</script>
+<!-- loading结束 -->
   
 
   
 
   
 
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
 
 <body>
+	<div id="loader-wrapper">
+    <div id="loader"></div>
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+    <!-- <div class="load_title">Loading. . .<br></div> -->
+  </div>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
     <div class="left-col" q-class="show:isShow">
@@ -58,9 +78,9 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+				<li><a href="/categories">分类</a></li>
 	        
-				<li><a href="/tags/%E5%BD%92%E6%A1%A3/">归档</a></li>
+				<li><a href="/tags/%E5%BD%92%E6%A1%A3">归档</a></li>
 	        
 			</ul>
 		</nav>
@@ -69,8 +89,8 @@
 		<div id="hitokoto"><script>hitokoto()</script></div>
 		</div>
 		<nav>
-			总文章数 4
-			总字数 <span class="post-count">2.3k</span>
+			总文章数 5
+			总字数 <span class="post-count">3.4k</span>
 		</nav>		
 		<nav> <class="header-smart-menu">
     		
@@ -87,6 +107,32 @@
     			
             
 		</nav>
+		
+<script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<form id="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="local-search-input" name="q" results="0" style="text-align:center" placeholder="站内搜索..." class="search form-control" autocomplete="off" autocorrect="off"/>
+    <i class="fa fa-times" onclick="resetSearch()"></i> <!-- 清空/重置搜索框 -->
+</form>
+<div id="local-search-result"></div> <!-- 搜索结果区 -->
+<p class='no-result'>没找到。。。</p> <!-- 无匹配时显示，注意请在 CSS 中设置默认隐藏 -->
+<script type="text/javascript" src="/search.js"></script>
+<script>
+var inputArea = document.querySelector("#local-search-input");
+var getSearchFile = function(){
+    var path = "/search.xml";
+    searchFunc(path, 'local-search-input', 'local-search-result');
+}
+inputArea.onfocus = function(){ getSearchFile() }
+        $resultArea.bind("DOMNodeRemoved DOMNodeInserted", function(e) {
+            if (!$(e.target).text()) {
+                $(".no-result").show(200);
+            } else {
+              $(".no-result").hide();}
+	      })
+}
+
+</script>
+
 		<nav>
 			<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=86 height=86 
 			src="//music.163.com/outchain/player?type=2&id=1330348068&auto=0&height=66"></iframe>
@@ -142,9 +188,9 @@
 				
 					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+					<li style="width: 33.333333333333336%"><a href="/categories">分类</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/tags/%E5%BD%92%E6%A1%A3/">归档</a></li>
+					<li style="width: 33.333333333333336%"><a href="/tags/%E5%BD%92%E6%A1%A3">归档</a></li>
 		        
 				</ul>
 			</nav>
@@ -161,198 +207,6 @@
           <div id="js-content" class="content-ll">
             
   
-    <article id="post-shell" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/post/4592b2fd.html">shell</a>
-    </h1>
-  
-
-        
-        <a href="/post/4592b2fd.html" class="archive-article-date">
-  	<time datetime="2021-11-19T12:05:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-19</time>
-</a>
-		
-        
-      </header>
-	  <div align="center" class="post-count">
-		字数：1.4k字 | 预计阅读时长：5分钟
-	  </div>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="初识shell"><a href="#初识shell" class="headerlink" title="初识shell"></a>初识shell</h1><h2 id="什么是shell"><a href="#什么是shell" class="headerlink" title="什么是shell"></a>什么是shell</h2><p>shell是一个程序，采用C语言编写，是用户和Linux内核沟通的桥梁。它既是一种命令语言，又是一种解释性的编程语言。通过一个图表来查看一下shell的作用。</p>
-<h2 id=""><a href="#" class="headerlink" title=""></a><img src="D:\Download\shell.jpeg" style="zoom: 33%;" /></h2><p>解释：</p>
-<p>​    内核：为软件服务，接受用户或软件指令驱动硬件，完成工作。</p>
-<p>​    shell：命令解释器</p>
-<p>​    user：用户接口，对接用户</p>
-<h2 id="什么是shell脚本"><a href="#什么是shell脚本" class="headerlink" title="什么是shell脚本"></a>什么是shell脚本</h2><p>shell脚本就是将完成一个任务的所有命令按照执行的先后顺序，自上而下写入到一个文本文件中，然后给与执行权限。</p>
-<h1 id="shell语法"><a href="#shell语法" class="headerlink" title="shell语法"></a>shell语法</h1><p>使用shell脚本安装一个nginx</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">yum -y install wget pcre-devel zlib-devel</span><br><span class="line">wget http://nginx.org/download/nginx-1.16.0.tar.gz</span><br><span class="line">tar xf nginx-1.16.0.tar.gz</span><br><span class="line">cd nginx-1.16.0</span><br><span class="line">./configure --prefix=/usr/local/nginx</span><br><span class="line">make -j 4</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
-
-<h2 id="一、如何书写一个shell脚本"><a href="#一、如何书写一个shell脚本" class="headerlink" title="一、如何书写一个shell脚本"></a>一、如何书写一个shell脚本</h2><p>shell脚本的命名：</p>
-<p>名字有意义，最好不要用a、b、C、1、2这种方式命名；虽然在Linux系统中没有文件拓展名这种概念，依然建议你使用.sh .py结尾。同时，名字不要太长，最好能在30字以内。</p>
-<p>shell脚本格式：</p>
-<p>shell脚本开头必须指定脚本运行环境。以#！这个特殊符号来组合。如：#！/bin/bash指定该脚本是运行在/bin/bash下。</p>
-<p>shell中的注释使用#号。</p>
-<p>在创建一个shell脚本时，应该使用#注释表明脚本的用途、创建时间、作者、作者的联系方式等内容。</p>
-<p>我们上面安装nginx的脚本就需要优化为下面这样：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">1) 定义脚本的执行环境</span></span><br><span class="line"><span class="meta">#</span><span class="bash">！/bin/bash</span></span><br><span class="line"><span class="meta">#</span><span class="bash">2）表明作者和脚本信息</span></span><br><span class="line"><span class="meta">#</span><span class="bash">作者：风景</span></span><br><span class="line"><span class="meta">#</span><span class="bash">创建时间：2021年11月19日20:52:20</span></span><br><span class="line"><span class="meta">#</span><span class="bash">脚本版本：1.0</span></span><br><span class="line"><span class="meta">#</span><span class="bash">脚本描述：安装nginx1.16.0</span></span><br><span class="line"></span><br><span class="line">yum -y install wget pcre-devel zlib-devel</span><br><span class="line">wget http://nginx.org/download/nginx-1.16.0.tar.gz</span><br><span class="line">tar xf nginx-1.16.0.tar.gz</span><br><span class="line">cd nginx-1.16.0</span><br><span class="line">./configure --prefix=/usr/local/nginx</span><br><span class="line">make -j 4</span><br><span class="line">make install</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>注：#！不是注释，他指定使用哪个解释器来运行shell脚本。</p>
-</blockquote>
-<h2 id="二、执行shell脚本的2种方式"><a href="#二、执行shell脚本的2种方式" class="headerlink" title="二、执行shell脚本的2种方式"></a>二、执行shell脚本的2种方式</h2><p>1、给与权限执行。        2、在解释器中执行，不需要给权限</p>
-<h3 id="1、给予权限执行"><a href="#1、给予权限执行" class="headerlink" title="1、给予权限执行"></a>1、给予权限执行</h3><blockquote>
-<p>1、在绝对路径中执行脚本</p>
-</blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/shell/helloworld.sh</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>2、以相对路径执行脚本</p>
-</blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd /shell/</span><br><span class="line">./helloworld.sh</span><br></pre></td></tr></table></figure>
-
-<p>注：编写完脚本后需要增加执行权限。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod +x helloworld.sh</span><br></pre></td></tr></table></figure>
-
-<h3 id="2、使用解释器执行"><a href="#2、使用解释器执行" class="headerlink" title="2、使用解释器执行"></a>2、使用解释器执行</h3><p>就是在脚本文件前面加上指定的解释器，然后执行。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash nginx_install.sh</span><br></pre></td></tr></table></figure>
-
-<h2 id="三、shell中的特殊符号"><a href="#三、shell中的特殊符号" class="headerlink" title="三、shell中的特殊符号"></a>三、shell中的特殊符号</h2><blockquote>
-<p>~: 家目录 #cd ~代表用户进入家目录</p>
-<p>!: 执行历史命令 !! 执行上一条命令</p>
-<p>$0：当前脚本的文件名</p>
-<p>$n：第n个位置参数</p>
-<p>$*：传递给脚本或函数的所有参数，$*会将这些参数视为一个整体</p>
-<p>$@：传递给脚本或函数的所有参数，$@会将所有参数当作同一字符串中的多个独立的单词</p>
-<p>: 转义字符</p>
-<p>*: 星号是shell中的通配符，匹配所有</p>
-<p>?: 问号是shell中的通配符 匹配除回车以外的一个字符</p>
-<p>;: 分号可在shell中一行执行多个命令，命令之间用分号分割。</p>
-<p>``: 反引号 ，命令中执行命令 echo “today is <code>date +%F</code>“</p>
-<p>‘’:单引号，脚本出现的字符串可以用单引号引起来，但是不同于双引号的是，单引号不解释变量。</p>
-<p>“”:双引号，脚本出现的字符串可以用双引号引起来</p>
-<p>$: 变量中取内容符</p>
-<p>$#：脚本运行时携带的参数个数</p>
-<p>$?：最近一个命令的退出状态码</p>
-<p>$$：当前shell的进程ID（PID）</p>
-<p>$!：最近一个后台命令的PID</p>
-<p>IFS：内部字段分隔符，IFS环境变量定义了shell用作字段分隔符的一系列字符。默认情况下，shell会将下列字符当做字段分隔符：</p>
-<ul>
-<li><p>空格</p>
-</li>
-<li><p>制表符</p>
-</li>
-<li><p>换行符</p>
-</li>
-</ul>
-<p>&amp;: 后台执行</p>
-<p>&amp;&gt;：将STDERR和STDOUT的输出重定向到同一个输出文件</p>
-<p>&amp;-：要关闭文件描述符，可以将它重定向到特殊符号&amp;-</p>
-<p>.：点操作符，点操作符是source命令的别名，它会在shell上下文中执行点操作符指定的脚本，而不是创建一个新的shell。</p>
-</blockquote>
-<h2 id="四、shell中管道运用"><a href="#四、shell中管道运用" class="headerlink" title="四、shell中管道运用"></a>四、shell中管道运用</h2><blockquote>
-<p>管道符在shell中使用是最多的，很多组合命令都需要通过命令来组合完成输出。管道其实就是上一个命令的输出作为下一个命令的输入</p>
-</blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ps -aux | grep ssh</span><br><span class="line">root       1136  0.0  0.1 112984  4328 ?        Ss   10:28   0:00 /usr/sbin/sshd -D</span><br><span class="line">root       8902  0.0  0.1 158940  5548 ?        Ss   10:29   0:00 sshd: centos [priv]</span><br><span class="line">centos     8906  0.0  0.0 158940  2520 ?        S    10:29   0:00 sshd: centos@pts/1</span><br><span class="line">root       9181  0.0  0.0 112828   988 pts/1    S+   10:39   0:00 grep --color=auto ssh</span><br></pre></td></tr></table></figure>
-
-<h2 id="五、重定向的使用"><a href="#五、重定向的使用" class="headerlink" title="五、重定向的使用"></a>五、重定向的使用</h2><h3 id="输入重定向："><a href="#输入重定向：" class="headerlink" title="输入重定向："></a>输入重定向：</h3><blockquote>
-<p>将输入的结果重定向到另一个文件中（会覆盖原来的内容）：&gt;</p>
-</blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo aaa &gt; a.txt</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>将前面命令输出的结果追加到后面的文件中（不会覆盖原来的内容）：&gt;&gt;</p>
-</blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo bbb &gt;&gt; a.txt</span><br></pre></td></tr></table></figure>
-
-<h3 id="输出重定向"><a href="#输出重定向" class="headerlink" title="输出重定向"></a>输出重定向</h3><blockquote>
-<p>重定向输出 &lt;</p>
-</blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cat &lt; /etc/passwd</span><br><span class="line">50</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>重定向追加输出：&lt;&lt;</p>
-</blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">cat &lt;&lt; eof</span><br><span class="line"><span class="meta">&gt;</span><span class="bash">aaa</span></span><br><span class="line"><span class="meta">&gt;</span><span class="bash">eof</span></span><br></pre></td></tr></table></figure>
-
-<p>将eof字符之前的字符作为输入传递给cat命令，然后查看输入结果。</p>
-<h3 id="输入输出重定向同时使用"><a href="#输入输出重定向同时使用" class="headerlink" title="输入输出重定向同时使用"></a>输入输出重定向同时使用</h3><blockquote>
-<p>命令格式：命令 &lt; 文件1 &gt; 文件2</p>
-<p>功能：命令把文件1的内容作为标准输入，把文件2作为标准输出。</p>
-</blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat  /etc/passwd  &lt; a  &gt; b.txt</span><br></pre></td></tr></table></figure>
-
-<p>将文件passwdt输入重定向到a，输出重定向到b.txt文件</p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">归档</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Linux//" class="article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/post/4592b2fd.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
     <article id="post-mysql" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -366,11 +220,17 @@
 
         
         <a href="/post/9520183a.html" class="archive-article-date">
-  	<time datetime="2021-11-19T05:08:45.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-19</time>
+  	<time datetime="2021-11-23T01:17:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-23</time>
 </a>
 		
         
       </header>
+	  
+<!-- 目录内容 -->
+
+<!-- 目录内容结束 -->
+	  
+	  
 	  <div align="center" class="post-count">
 		字数：821字 | 预计阅读时长：3分钟
 	  </div>
@@ -379,54 +239,9 @@
       
         <h1 id="第四课时：过滤数据"><a href="#第四课时：过滤数据" class="headerlink" title="第四课时：过滤数据"></a>第四课时：过滤数据</h1><p>主要内容：select和where语句</p>
 <p>注：在select语句中，数据根据where子句指定的搜索条件进行过滤。</p>
-<p>where子句的位置：在同时使用order by 和where子句时，应该让order by位于where之后，                否则会产生错误。</p>
-<p>解释：where子句会将查询到的数据放到内存中。where之后的子句都是在内存中的数据进行操    作。</p>
-<h2 id="where子句的使用"><a href="#where子句的使用" class="headerlink" title="where子句的使用"></a>where子句的使用</h2><h3 id="如何使用引号"><a href="#如何使用引号" class="headerlink" title="如何使用引号"></a>如何使用引号</h3><p>单引号用来限定字符串。如果将值与字符串类型的列进行比较，就需要限定引号。如果与数值列进行比较就不需要单引号。</p>
-<h3 id="范围值检查——between"><a href="#范围值检查——between" class="headerlink" title="范围值检查——between"></a>范围值检查——between</h3><p>语法</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">where</span> <span class="operator">&lt;</span>字段名<span class="operator">&gt;</span> <span class="keyword">between</span> <span class="operator">&lt;</span>开始值<span class="operator">&gt;</span> <span class="keyword">AND</span> <span class="operator">&lt;</span>结束值<span class="operator">&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>这两个值必须使用关键字进行分割。between匹配范围内的所有值，包括起始值与结束值。</p>
-<h3 id="空值检查"><a href="#空值检查" class="headerlink" title="空值检查"></a>空值检查</h3><p>概念：在一个列不包含值时，称其包含空值NULL。</p>
-<p>NULL：无值（no value）它与字段包含0、空字符串或仅包含空格不同。</p>
-<p>语法：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">where</span> cust_email <span class="keyword">is</span> <span class="keyword">null</span></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>select 语句有一个特殊的where子句，可用来检查具有NULL值的列。这个子句是IS NULL</p>
-</blockquote>
-<blockquote>
-<p>null与不匹配解释：</p>
-<p>​    假设一列有三个值age=11，age=null，age=10。现在需要筛选出年龄不为10的人，则只会筛选出age=11，不会筛选出age=null。</p>
-<p>原文解释：</p>
-<p>​    在通过过滤选择出不具有特定值的行时，你可能希望返回具有NULL值的行。但是，不行。因为未知(NULL)具有特殊的含义，数据库不知道它们是否匹配，所以在匹配过滤或不匹配过滤时不返回它们。因此，在过滤数据时，一定要验证返回数据中确实给出了被过滤列具有NULL的行。</p>
-</blockquote>
-<h1 id="第五课时：高级数据过滤"><a href="#第五课时：高级数据过滤" class="headerlink" title="第五课时：高级数据过滤"></a>第五课时：高级数据过滤</h1><blockquote>
-<p>主要内容：组合where子句。NOT和IN操作符</p>
-</blockquote>
-<h2 id="组合where语句"><a href="#组合where语句" class="headerlink" title="组合where语句"></a>组合where语句</h2><p>SQL允许多个where语句。这些子句有两种使用方式。即以AND子句或OR子句方式使用。</p>
-<h3 id="AND操作符"><a href="#AND操作符" class="headerlink" title="AND操作符"></a>AND操作符</h3><p>作用：给多个where子句添加附加条件。相当于逻辑运算中的“与”操作。</p>
-<p>语法</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">where</span> <span class="operator">&lt;</span>条件<span class="number">1</span><span class="operator">&gt;</span> <span class="keyword">and</span> <span class="operator">&lt;</span>条件<span class="number">2</span><span class="operator">&gt;</span></span><br></pre></td></tr></table></figure>
-
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">where</span> vend_id <span class="operator">=</span> <span class="string">&#x27;DLL01&#x27;</span> <span class="keyword">and</span> prod_price <span class="operator">&lt;=</span><span class="number">4</span>;</span><br></pre></td></tr></table></figure>
-
-<h3 id="OR操作符"><a href="#OR操作符" class="headerlink" title="OR操作符"></a>OR操作符</h3><p>作用：相当于逻辑运算中的“或运算”</p>
-<blockquote>
-<p>注：许多DBMS在OR WHERE子句第一个条件得满足的情况下，就不再继续计算第二个条件（即第一个条件满足，直接打印结果）</p>
-</blockquote>
-<p>语法</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">where</span> <span class="operator">&lt;</span>条件<span class="number">1</span><span class="operator">&gt;</span> <span class="keyword">or</span> <span class="operator">&lt;</span>条件<span class="number">2</span><span class="operator">&gt;</span>;</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">where</span> vend_id<span class="operator">=</span><span class="string">&#x27;DLL01&#x27;</span> <span class="keyword">or</span> vend_id<span class="operator">=</span><span class="string">&#x27;BRS01&#x27;</span>;</span><br></pre></td></tr></table></figure>
-
-<h3 id="求值顺序"><a href="#求值顺序" class="headerlink" title="求值顺序"></a>求值顺序</h3><p>where子句可以包含任意数目的AND和OR操作符，并且允许两者结合使用。</p>
-<p>例如：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">where</span> vend_id<span class="operator">=</span><span class="string">&#x27;DLL01&#x27;</span> <span class="keyword">or</span> vend_id<span class="operator">=</span><span class="string">&#x27;BRS01&#x27;</span> <span class="keyword">AND</span> proc_price<span class="operator">&gt;=</span><span class="number">10</span>;</span><br></pre></td></tr></table></figure>
-
-<p>上述这条命令，我们是想先执行or操作符，然后再执行AND操作符。但是执行结果确实先执行and操作符再执行or操作符。这是因为SQL默认的执行方式会先执行and决定的。我们可以做如下修改，即可达到我们的目的。</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">where</span> （vend_id<span class="operator">=</span><span class="string">&#x27;DLL01&#x27;</span> <span class="keyword">or</span> vend_id<span class="operator">=</span><span class="string">&#x27;BRS01&#x27;</span>）<span class="keyword">AND</span> proc_price<span class="operator">&gt;=</span><span class="number">10</span>;</span><br></pre></td></tr></table></figure>
-
-
+        
+          <a class="article-more-a" href="/post/9520183a.html#more">more >></a>
+        
       
 
       
@@ -490,30 +305,39 @@
 
 
   
-    <article id="post-网络" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/post/50daec4.html">网络</a>
+      <a class="article-title" href="/post/4a17b156.html">Hello World</a>
     </h1>
   
 
         
-        <a href="/post/50daec4.html" class="archive-article-date">
-  	<time datetime="2021-10-08T05:08:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-10-08</time>
+        <a href="/post/4a17b156.html" class="archive-article-date">
+  	<time datetime="2021-11-23T01:12:55.040Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-23</time>
 </a>
 		
         
       </header>
+	  
+<!-- 目录内容 -->
+
+<!-- 目录内容结束 -->
+	  
+	  
 	  <div align="center" class="post-count">
-		字数：0字 | 预计阅读时长：1分钟
+		字数：75字 | 预计阅读时长：1分钟
 	  </div>
     
     <div class="article-entry" itemprop="articleBody">
       
+        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+        
+          <a class="article-more-a" href="/post/4a17b156.html#more">more >></a>
         
       
 
@@ -521,12 +345,28 @@
     </div>
     <div class="article-info article-info-index">
       
+        <div class="article-pop-out tagcloud">
+          <i class="icon-tuding"></i>
+          <a class="article-tag-list-link color3">置顶</a>
+        </div>
       
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/post/50daec4.html">展开全文 >></a>
+          <a class="article-more-a" href="/post/4a17b156.html">展开全文 >></a>
         </p>
       
 
@@ -556,54 +396,48 @@
 
 
   
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+    <article id="post-mpls-vpn" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/post/4a17b156.html">Hello World</a>
+      <a class="article-title" href="/post/45c7d1a9.html">mpls_vpn</a>
     </h1>
   
 
         
-        <a href="/post/4a17b156.html" class="archive-article-date">
-  	<time datetime="2021-10-07T06:18:22.893Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-10-07</time>
+        <a href="/post/45c7d1a9.html" class="archive-article-date">
+  	<time datetime="2021-11-20T14:15:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-20</time>
 </a>
 		
         
       </header>
+	  
+<!-- 目录内容 -->
+
+<!-- 目录内容结束 -->
+	  
+	  
 	  <div align="center" class="post-count">
-		字数：75字 | 预计阅读时长：1分钟
+		字数：548字 | 预计阅读时长：2分钟
 	  </div>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
+        <h1 id="MPLS原理"><a href="#MPLS原理" class="headerlink" title="MPLS原理"></a>MPLS原理</h1><h2 id="MPLS介绍"><a href="#MPLS介绍" class="headerlink" title="MPLS介绍"></a>MPLS介绍</h2><p>现状：由于路由器性能能力已经比较强，MPLS转发增强能力已经不明显。</p>
+<p>全称：Multi-Proctocol Lable Switching 多协议标签交换</p>
+<p>Muti-Proctocol：支持多三层协议，如IP、IPv6、IPX等等</p>
+<p>Lable Switching:在所承载的报文前面加上标签栈，基于标签做转发。</p>
+        
+          <a class="article-more-a" href="/post/45c7d1a9.html#more">more >></a>
+        
       
 
       
     </div>
     <div class="article-info article-info-index">
-      
-        <div class="article-pop-out tagcloud">
-          <i class="icon-tuding"></i>
-          <a class="article-tag-list-link color3">置顶</a>
-        </div>
       
       
 	<div class="article-tag tagcloud">
@@ -611,17 +445,197 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">归档</a>
         		</li>
       		
 		</ul>
 	</div>
 
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/网络//" class="article-tag-list-link color3">网络</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
         <p class="article-more-link">
-          <a class="article-more-a" href="/post/4a17b156.html">展开全文 >></a>
+          <a class="article-more-a" href="/post/45c7d1a9.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-shell" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/post/4592b2fd.html">shell</a>
+    </h1>
+  
+
+        
+        <a href="/post/4592b2fd.html" class="archive-article-date">
+  	<time datetime="2021-11-19T12:05:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-19</time>
+</a>
+		
+        
+      </header>
+	  
+<!-- 目录内容 -->
+
+<!-- 目录内容结束 -->
+	  
+	  
+	  <div align="center" class="post-count">
+		字数：2k字 | 预计阅读时长：7分钟
+	  </div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="初识shell"><a href="#初识shell" class="headerlink" title="初识shell"></a>初识shell</h1><h2 id="什么是shell"><a href="#什么是shell" class="headerlink" title="什么是shell"></a>什么是shell</h2><p>shell是一个程序，采用C语言编写，是用户和Linux内核沟通的桥梁。它既是一种命令语言，又是一种解释性的编程语言。通过一个图表来查看一下shell的作用。</p>
+        
+          <a class="article-more-a" href="/post/4592b2fd.html#more">more >></a>
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">归档</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/Linux//" class="article-tag-list-link color1">Linux</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/post/4592b2fd.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-网络" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/post/50daec4.html">网络</a>
+    </h1>
+  
+
+        
+        <a href="/post/50daec4.html" class="archive-article-date">
+  	<time datetime="2021-10-08T05:08:23.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-10-08</time>
+</a>
+		
+        
+      </header>
+	  
+<!-- 目录内容 -->
+
+<!-- 目录内容结束 -->
+	  
+	  
+	  <div align="center" class="post-count">
+		字数：0字 | 预计阅读时长：1分钟
+	  </div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/post/50daec4.html">展开全文 >></a>
         </p>
       
 
@@ -753,11 +767,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" class="js-tag color3">归档</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">归档</a>
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
             
             <div class="clearfix"></div>
@@ -902,5 +916,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
 
 </div>
   </div>
+  <!-- 代码块复制功能开始 -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.js"></script>
+<script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript" src="/js/clipboard_use.js"></script>
+<!-- 代码块复制功能结束 -->
+
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/z16.model.json"},"display":{"position":"right","width":145,"height":315},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body>
 </html>

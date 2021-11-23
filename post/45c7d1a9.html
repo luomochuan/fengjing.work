@@ -6,18 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://luomochuan.github.io">
-  <title>categories | 风景的小屋</title>
+  <title>mpls_vpn | 风景的小屋</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="个人博客">
-<meta property="og:type" content="website">
-<meta property="og:title" content="categories">
-<meta property="og:url" content="http://luomochuan.github.io/categories/index-1.html">
+  <meta name="description" content="MPLS原理MPLS介绍现状：由于路由器性能能力已经比较强，MPLS转发增强能力已经不明显。 全称：Multi-Proctocol Lable Switching 多协议标签交换 Muti-Proctocol：支持多三层协议，如IP、IPv6、IPX等等 Lable Switching:在所承载的报文前面加上标签栈，基于标签做转发。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mpls_vpn">
+<meta property="og:url" content="http://luomochuan.github.io/post/45c7d1a9.html">
 <meta property="og:site_name" content="风景的小屋">
-<meta property="og:description" content="个人博客">
+<meta property="og:description" content="MPLS原理MPLS介绍现状：由于路由器性能能力已经比较强，MPLS转发增强能力已经不明显。 全称：Multi-Proctocol Lable Switching 多协议标签交换 Muti-Proctocol：支持多三层协议，如IP、IPv6、IPX等等 Lable Switching:在所承载的报文前面加上标签栈，基于标签做转发。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-10-07T07:59:11.000Z">
-<meta property="article:modified_time" content="2021-10-07T07:59:11.904Z">
+<meta property="article:published_time" content="2021-11-20T14:15:33.000Z">
+<meta property="article:modified_time" content="2021-11-23T01:27:01.079Z">
 <meta property="article:author" content="fengjing">
+<meta property="article:tag" content="归档">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="风景的小屋" type="application/atom+xml">
@@ -32,15 +33,35 @@
       background: linear-gradient(200deg,#a0cfe4,#e8c37e);
     }
   </style>
+  <!-- Js控制Loding特效-->
+<script>
+  //监听加载状态改变
+  document.onreadystatechange = completeLoading;
+  
+  //加载状态为complete时移除loading效果
+  function completeLoading() {
+      if (document.readyState == "complete") {
+          var loadingMask = document.getElementById('loader-wrapper');
+          loadingMask.parentNode.removeChild(loadingMask);
+      }
+  }  
+</script>
+<!-- loading结束 -->
   
 
   
 
   
 
-<meta name="generator" content="Hexo 5.4.0"></head>
+<meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
 
 <body>
+	<div id="loader-wrapper">
+    <div id="loader"></div>
+    <div class="loader-section section-left"></div>
+    <div class="loader-section section-right"></div>
+    <!-- <div class="load_title">Loading. . .<br></div> -->
+  </div>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
     <div class="left-col" q-class="show:isShow">
@@ -60,9 +81,9 @@
 			
 				<li><a href="/">主页</a></li>
 	        
-				<li><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+				<li><a href="/categories">分类</a></li>
 	        
-				<li><a href="/tags/%E5%BD%92%E6%A1%A3/">归档</a></li>
+				<li><a href="/tags/%E5%BD%92%E6%A1%A3">归档</a></li>
 	        
 			</ul>
 		</nav>
@@ -71,8 +92,8 @@
 		<div id="hitokoto"><script>hitokoto()</script></div>
 		</div>
 		<nav>
-			总文章数 4
-			总字数 <span class="post-count">2.3k</span>
+			总文章数 5
+			总字数 <span class="post-count">3.4k</span>
 		</nav>		
 		<nav> <class="header-smart-menu">
     		
@@ -89,6 +110,32 @@
     			
             
 		</nav>
+		
+<script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<form id="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="local-search-input" name="q" results="0" style="text-align:center" placeholder="站内搜索..." class="search form-control" autocomplete="off" autocorrect="off"/>
+    <i class="fa fa-times" onclick="resetSearch()"></i> <!-- 清空/重置搜索框 -->
+</form>
+<div id="local-search-result"></div> <!-- 搜索结果区 -->
+<p class='no-result'>没找到。。。</p> <!-- 无匹配时显示，注意请在 CSS 中设置默认隐藏 -->
+<script type="text/javascript" src="/search.js"></script>
+<script>
+var inputArea = document.querySelector("#local-search-input");
+var getSearchFile = function(){
+    var path = "/search.xml";
+    searchFunc(path, 'local-search-input', 'local-search-result');
+}
+inputArea.onfocus = function(){ getSearchFile() }
+        $resultArea.bind("DOMNodeRemoved DOMNodeInserted", function(e) {
+            if (!$(e.target).text()) {
+                $(".no-result").show(200);
+            } else {
+              $(".no-result").hide();}
+	      })
+}
+
+</script>
+
 		<nav>
 			<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=86 height=86 
 			src="//music.163.com/outchain/player?type=2&id=1330348068&auto=0&height=66"></iframe>
@@ -144,9 +191,9 @@
 				
 					<li style="width: 33.333333333333336%"><a href="/">主页</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔</a></li>
+					<li style="width: 33.333333333333336%"><a href="/categories">分类</a></li>
 		        
-					<li style="width: 33.333333333333336%"><a href="/tags/%E5%BD%92%E6%A1%A3/">归档</a></li>
+					<li style="width: 33.333333333333336%"><a href="/tags/%E5%BD%92%E6%A1%A3">归档</a></li>
 		        
 				</ul>
 			</nav>
@@ -161,31 +208,89 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="page-" class="article article-type-page " itemscope itemprop="blogPost">
+            <article id="post-mpls-vpn" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      categories
+      mpls_vpn
     </h1>
   
 
         
-        <a href="/categories/index-1.html" class="archive-article-date">
-  	<time datetime="2021-10-07T07:59:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-10-07</time>
+        <a href="/post/45c7d1a9.html" class="archive-article-date">
+  	<time datetime="2021-11-20T14:15:33.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-20</time>
 </a>
 		
         
       </header>
+	  
+<!-- 目录内容 -->
+
+    <p class="show-toc-btn" id="show-toc-btn" onclick="showToc();" style="display:none">
+          <span class="btn-bg"></span>
+          <span class="btn-text">文章导航</span>
+          </p>
+	<div id="toc-article" class="toc-article">
+	    <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
+		<strong class="toc-title">文章目录</strong>
+           <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#MPLS%E5%8E%9F%E7%90%86"><span class="toc-number">1.</span> <span class="toc-text">MPLS原理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#MPLS%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.1.</span> <span class="toc-text">MPLS介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MPLS%E6%9E%84%E5%BB%BA%E8%BF%87%E7%A8%8B"><span class="toc-number">1.2.</span> <span class="toc-text">MPLS构建过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MPLS%E5%B0%8F%E7%BB%93"><span class="toc-number">1.3.</span> <span class="toc-text">MPLS小结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MPLS%E6%9E%B6%E6%9E%84"><span class="toc-number">1.4.</span> <span class="toc-text">MPLS架构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A7%E5%88%B6%E5%B1%82%E9%9D%A2"><span class="toc-number">1.4.1.</span> <span class="toc-text">控制层面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%B1%82%E9%9D%A2"><span class="toc-number">1.4.2.</span> <span class="toc-text">数据层面</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MPLS%E8%AE%BE%E5%A4%87"><span class="toc-number">1.5.</span> <span class="toc-text">MPLS设备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#FEC%E8%BD%AC%E5%8F%91%E7%AD%89%E4%BB%B7%E7%B1%BB"><span class="toc-number">1.6.</span> <span class="toc-text">FEC转发等价类</span></a></li></ol></li></ol>
+         </div>
+   <script type="text/javascript">
+	function showToc(){
+		var toc_article = document.getElementById("toc-article");
+		var show_toc_btn = document.getElementById("show-toc-btn");
+		toc_article.setAttribute("style","display:block");
+		show_toc_btn.setAttribute("style","display:none");
+		};
+	function showBtn(){
+		var toc_article = document.getElementById("toc-article");
+		var show_toc_btn = document.getElementById("show-toc-btn");
+		toc_article.setAttribute("style","display:none");
+		show_toc_btn.setAttribute("style","display:block");
+		};
+   </script>
+      
+<!-- 目录内容结束 -->
+	  
+	  
 	  <div align="center" class="post-count">
-		字数：0字 | 预计阅读时长：1分钟
+		字数：548字 | 预计阅读时长：2分钟
 	  </div>
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="MPLS原理"><a href="#MPLS原理" class="headerlink" title="MPLS原理"></a>MPLS原理</h1><h2 id="MPLS介绍"><a href="#MPLS介绍" class="headerlink" title="MPLS介绍"></a>MPLS介绍</h2><p>现状：由于路由器性能能力已经比较强，MPLS转发增强能力已经不明显。</p>
+<p>全称：Multi-Proctocol Lable Switching 多协议标签交换</p>
+<p>Muti-Proctocol：支持多三层协议，如IP、IPv6、IPX等等</p>
+<p>Lable Switching:在所承载的报文前面加上标签栈，基于标签做转发。</p>
+<span id="more"></span>
+
+<blockquote>
+<p>MPLS是一种新的转发机制，数据在MPLS网络中是以根据标签信息进行转发</p>
+<p>一般而言，MPLS的标签对应目的地址（路有前缀）</p>
+<p>MPLS依赖IP路由及CEF交换，基于报头头部的标签进行数据转发。</p>
+<p>MPLS能够支持或者说承载多种三层协议。</p>
+</blockquote>
+<h2 id="MPLS构建过程"><a href="#MPLS构建过程" class="headerlink" title="MPLS构建过程"></a>MPLS构建过程</h2><p>1、路由器运行IGP路由协议，维护RIB表及CEF表</p>
+<p>2、路由器运行标签分发协议（LDP），维护LIB表</p>
+<p>3、路由器更新CEF表，同时维护LFIB表（路由器转发依据表）</p>
+<blockquote>
+<p>注：LIB表是建立在CEF表之上的。</p>
+</blockquote>
+<h2 id="MPLS小结"><a href="#MPLS小结" class="headerlink" title="MPLS小结"></a>MPLS小结</h2><ul>
+<li>采用MPLS，可避免ip路由逐跳转发情况，减少对数据包的深入分析，借助标签建立二层的快速转发路径，使得数据沿着一条预先建立的路径快速转发。</li>
+<li>数据包在进入MPLS网络的入口路由器上被进行一次三层查找，而在此后的LSR只是进行简单的标签交换动作，无需进一步分析三层信息</li>
+<li>每个LSR必须在数据转发之前建立好LIB（标签信息库），及LFIB（标签转发信息数据库）。当LSR收到一个标签数据帧时，将数据帧中的标签在LFIB表中进行查找，在根据LFIB表中指示的相关动作多标签进行压入、弹出、交换、移除等动作。</li>
+</ul>
+<h2 id="MPLS架构"><a href="#MPLS架构" class="headerlink" title="MPLS架构"></a>MPLS架构</h2><h3 id="控制层面"><a href="#控制层面" class="headerlink" title="控制层面"></a>控制层面</h3><p>交换三层路由信息（如ospf/ISIS/BGP等）及标签（如TDP（思科私有）、LDP（共有）、BGP（多协议拓展）及RSVP）</p>
+<p>[]: <a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/20200702091737299.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlaXRoNjc4NTc1Mw==,size_16,color_FFFFFF,t_70">https://img-blog.csdnimg.cn/20200702091737299.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlaXRoNjc4NTc1Mw==,size_16,color_FFFFFF,t_70</a></p>
+<h3 id="数据层面"><a href="#数据层面" class="headerlink" title="数据层面"></a>数据层面</h3><p>基于标签进行数据转发</p>
+<p><a target="_blank" rel="noopener" href="https://img0.baidu.com/it/u=2640730388,1754192360&amp;fm=15&amp;f">https://img0.baidu.com/it/u=2640730388,1754192360&amp;fm=15&amp;f</a></p>
+<h2 id="MPLS设备"><a href="#MPLS设备" class="headerlink" title="MPLS设备"></a>MPLS设备</h2><p>LSR标签交换路由器</p>
+<h2 id="FEC转发等价类"><a href="#FEC转发等价类" class="headerlink" title="FEC转发等价类"></a>FEC转发等价类</h2>
       
 
       
@@ -219,7 +324,29 @@
     <div class="article-info article-info-index">
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">归档</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/网络//" class="article-tag-list-link color3">网络</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
 
       
 
@@ -269,7 +396,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/creat-qr-code/?size=150*150&data=https://fengjing.work/thub.io/categories/index-1.html" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/creat-qr-code/?size=150*150&data=https://fengjing.work/thub.io/post/45c7d1a9.html" alt="微信分享二维码">
     </div>
 </div>
 
@@ -281,6 +408,28 @@
 </article>
 
   
+<nav id="article-nav">
+  
+    <a href="/post/4a17b156.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Hello World
+        
+      </div>
+    </a>
+  
+  
+    <a href="/post/4592b2fd.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">shell</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+<span id="busuanzi_container_page_pv">
+        本文阅读量: <span id="busuanzi_value_page_pv"></span>次
+ </span>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -294,6 +443,19 @@
             </div>
         </div>
         
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#MPLS%E5%8E%9F%E7%90%86"><span class="toc-number">1.</span> <span class="toc-text">MPLS原理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#MPLS%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.1.</span> <span class="toc-text">MPLS介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MPLS%E6%9E%84%E5%BB%BA%E8%BF%87%E7%A8%8B"><span class="toc-number">1.2.</span> <span class="toc-text">MPLS构建过程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MPLS%E5%B0%8F%E7%BB%93"><span class="toc-number">1.3.</span> <span class="toc-text">MPLS小结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MPLS%E6%9E%B6%E6%9E%84"><span class="toc-number">1.4.</span> <span class="toc-text">MPLS架构</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A7%E5%88%B6%E5%B1%82%E9%9D%A2"><span class="toc-number">1.4.1.</span> <span class="toc-text">控制层面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%B1%82%E9%9D%A2"><span class="toc-number">1.4.2.</span> <span class="toc-text">数据层面</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MPLS%E8%AE%BE%E5%A4%87"><span class="toc-number">1.5.</span> <span class="toc-text">MPLS设备</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#FEC%E8%BD%AC%E5%8F%91%E7%AD%89%E4%BB%B7%E7%B1%BB"><span class="toc-number">1.6.</span> <span class="toc-text">FEC转发等价类</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
         
     </div>
 </aside>
@@ -384,7 +546,7 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
@@ -453,11 +615,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
+                <a href="javascript:void(0)" class="js-tag color3">归档</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">归档</a>
+                <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
             
             <div class="clearfix"></div>
@@ -602,5 +764,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
 
 </div>
   </div>
+  <!-- 代码块复制功能开始 -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.4/dist/clipboard.js"></script>
+<script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script type="text/javascript" src="/js/clipboard_use.js"></script>
+<!-- 代码块复制功能结束 -->
+
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/z16.model.json"},"display":{"position":"right","width":145,"height":315},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body>
 </html>
