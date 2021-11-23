@@ -32,20 +32,6 @@
       background: linear-gradient(200deg,#a0cfe4,#e8c37e);
     }
   </style>
-  <!-- Js控制Loding特效-->
-<script>
-  //监听加载状态改变
-  document.onreadystatechange = completeLoading;
-  
-  //加载状态为complete时移除loading效果
-  function completeLoading() {
-      if (document.readyState == "complete") {
-          var loadingMask = document.getElementById('loader-wrapper');
-          loadingMask.parentNode.removeChild(loadingMask);
-      }
-  }  
-</script>
-<!-- loading结束 -->
   
 
   
@@ -55,12 +41,6 @@
 <meta name="generator" content="Hexo 5.4.0"><link rel="stylesheet" href="/css/prism.css" type="text/css"></head>
 
 <body>
-	<div id="loader-wrapper">
-    <div id="loader"></div>
-    <div class="loader-section section-left"></div>
-    <div class="loader-section section-right"></div>
-    <!-- <div class="load_title">Loading. . .<br></div> -->
-  </div>
   <div id="container" q-class="show:isCtnShow">
     <canvas id="anm-canvas" class="anm-canvas"></canvas>
     <div class="left-col" q-class="show:isShow">
@@ -648,6 +628,5 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
 <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 <script type="text/javascript" src="/js/clipboard_use.js"></script>
 <!-- 代码块复制功能结束 -->
-
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/z16.model.json"},"display":{"position":"right","width":145,"height":315},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body>
 </html>
