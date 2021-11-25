@@ -6,20 +6,39 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://luomochuan.github.io">
-  <title>mpls_vpn | 风景的小屋</title>
+  <title>mpls | 风景的小屋</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
+  <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
+    <style>
+    .pace .pace-progress {
+        background: #6d6d6d; /*进度条颜色*/
+        height: 2px;
+    }
+    .pace .pace-progress-inner {
+         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #6d6d6d; /*阴影颜色*/
+    }
+    .pace .pace-activity {
+        border-top-color: #6d6d6d;    /*上边框颜色*/
+        border-left-color: #6d6d6d;    /*左边框颜色*/
+    }
+  </style>
+
   <meta name="description" content="MPLS原理MPLS介绍现状：由于路由器性能能力已经比较强，MPLS转发增强能力已经不明显。 全称：Multi-Proctocol Lable Switching 多协议标签交换 Muti-Proctocol：支持多三层协议，如IP、IPv6、IPX等等 Lable Switching:在所承载的报文前面加上标签栈，基于标签做转发。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="mpls_vpn">
+<meta property="og:title" content="mpls">
 <meta property="og:url" content="http://luomochuan.github.io/post/45c7d1a9.html">
 <meta property="og:site_name" content="风景的小屋">
 <meta property="og:description" content="MPLS原理MPLS介绍现状：由于路由器性能能力已经比较强，MPLS转发增强能力已经不明显。 全称：Multi-Proctocol Lable Switching 多协议标签交换 Muti-Proctocol：支持多三层协议，如IP、IPv6、IPX等等 Lable Switching:在所承载的报文前面加上标签栈，基于标签做转发。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://z3.ax1x.com/2021/11/24/oFZsHS.png">
 <meta property="article:published_time" content="2021-11-20T14:15:33.000Z">
-<meta property="article:modified_time" content="2021-11-23T01:27:01.079Z">
+<meta property="article:modified_time" content="2021-11-24T15:59:31.670Z">
 <meta property="article:author" content="fengjing">
-<meta property="article:tag" content="归档">
+<meta property="article:tag" content="技术点">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://z3.ax1x.com/2021/11/24/oFZsHS.png">
   
     <link rel="alternative" href="/atom.xml" title="风景的小屋" type="application/atom+xml">
   
@@ -27,6 +46,10 @@
     <link rel="icon" href="/img/tubiao.ico">
   
   <link rel="stylesheet" type="text/css" href="/./main.0cf68a.css">
+  
+  <link href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="/./txbh.css">
+
   <style type="text/css">
   
     #container.show {
@@ -77,8 +100,8 @@
 		<div id="hitokoto"><script>hitokoto()</script></div>
 		</div>
 		<nav>
-			总文章数 5
-			总字数 <span class="post-count">3.4k</span>
+			总文章数 6
+			总字数 <span class="post-count">4.4k</span>
 		</nav>		
 		<nav> <class="header-smart-menu">
     		
@@ -176,7 +199,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      mpls_vpn
+      mpls
     </h1>
   
 
@@ -218,7 +241,7 @@
 	  
 	  
 	  <div align="center" class="post-count">
-		字数：548字 | 预计阅读时长：2分钟
+		字数：591字 | 预计阅读时长：2分钟
 	  </div>
     
     <div class="article-entry" itemprop="articleBody">
@@ -246,12 +269,15 @@
 <li>数据包在进入MPLS网络的入口路由器上被进行一次三层查找，而在此后的LSR只是进行简单的标签交换动作，无需进一步分析三层信息</li>
 <li>每个LSR必须在数据转发之前建立好LIB（标签信息库），及LFIB（标签转发信息数据库）。当LSR收到一个标签数据帧时，将数据帧中的标签在LFIB表中进行查找，在根据LFIB表中指示的相关动作多标签进行压入、弹出、交换、移除等动作。</li>
 </ul>
-<h2 id="MPLS架构"><a href="#MPLS架构" class="headerlink" title="MPLS架构"></a>MPLS架构</h2><h3 id="控制层面"><a href="#控制层面" class="headerlink" title="控制层面"></a>控制层面</h3><p>交换三层路由信息（如ospf/ISIS/BGP等）及标签（如TDP（思科私有）、LDP（共有）、BGP（多协议拓展）及RSVP）</p>
-<p>[]: <a target="_blank" rel="noopener" href="https://img-blog.csdnimg.cn/20200702091737299.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlaXRoNjc4NTc1Mw==,size_16,color_FFFFFF,t_70">https://img-blog.csdnimg.cn/20200702091737299.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlaXRoNjc4NTc1Mw==,size_16,color_FFFFFF,t_70</a></p>
+<h2 id="MPLS架构"><a href="#MPLS架构" class="headerlink" title="MPLS架构"></a>MPLS架构</h2><p><a target="_blank" rel="noopener" href="https://imgtu.com/i/oFZsHS"><img src="https://z3.ax1x.com/2021/11/24/oFZsHS.png" alt="oFZsHS.png"></a></p>
+<h3 id="控制层面"><a href="#控制层面" class="headerlink" title="控制层面"></a>控制层面</h3><p>交换三层路由信息（如ospf/ISIS/BGP等）及标签（如TDP（思科私有）、LDP（共有）、BGP（多协议拓展）及RSVP）</p>
 <h3 id="数据层面"><a href="#数据层面" class="headerlink" title="数据层面"></a>数据层面</h3><p>基于标签进行数据转发</p>
-<p><a target="_blank" rel="noopener" href="https://img0.baidu.com/it/u=2640730388,1754192360&amp;fm=15&amp;f">https://img0.baidu.com/it/u=2640730388,1754192360&amp;fm=15&amp;f</a></p>
 <h2 id="MPLS设备"><a href="#MPLS设备" class="headerlink" title="MPLS设备"></a>MPLS设备</h2><p>LSR标签交换路由器</p>
-<h2 id="FEC转发等价类"><a href="#FEC转发等价类" class="headerlink" title="FEC转发等价类"></a>FEC转发等价类</h2>
+<h2 id="FEC转发等价类"><a href="#FEC转发等价类" class="headerlink" title="FEC转发等价类"></a>FEC转发等价类</h2><ul>
+<li>在转发过程中，具有相同处理方式的一组数据，可通过地址、隧道、Qos等方式来标识，通常在一台设备上，对于一个FEC分配相同的标签。</li>
+<li>属于一个FEC的流量具有相同的转发方式、转发路径</li>
+</ul>
+
       
 
       
@@ -290,7 +316,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">归档</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">技术点</a>
         		</li>
       		
 		</ul>
@@ -580,7 +606,19 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">mpls</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">技术点</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">归档</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">sql必知必会</a>
               </li>
             
             <div class="clearfix"></div>
@@ -730,13 +768,5 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
 <script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 <script type="text/javascript" src="/js/clipboard_use.js"></script>
 <!-- 代码块复制功能结束 -->
-
-<!--动态线条背景-->
-
-    <script type="text/javascript" color="255, 235, 59" opacity="0.8" 
-        zIndex="-1" count="99" 
-        src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js">
-    </script>
-
 <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/z16.model.json"},"display":{"position":"right","width":145,"height":315},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.8},"log":false});</script></body>
 </html>
