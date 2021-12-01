@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>思科平台交换方式</title>
+      <link href="/post/8aa65066.html"/>
+      <url>/post/8aa65066.html</url>
+      
+        <content type="html"><![CDATA[<p>概述：思科平台支持的交换方式有三种：进程交换、快速交换、CEF（基于拓扑的交换）。</p><span id="more"></span><h1 id="CEF的负载均衡"><a href="#CEF的负载均衡" class="headerlink" title="CEF的负载均衡"></a>CEF的负载均衡</h1><p>基于目的地负载均衡实际上是通过对目的地和源IP地址进行HASH后实现的。也就是说实际上是基于源、目的地址对进行负载均衡。这种方法在大规模网络环境环境中很有用。</p><blockquote><p>什么叫做基于源、目的地址对进行负载均衡？</p><p>当主机A去访问另一台主机B的时候，即使他们中间有多条路径可供选择，他们将始终沿着分组第一次走过的路径进行传递。当主机A去访问同样拥有多条可达路径的主机C时，将会更换另一条路径。也就是说这种模式下，路由器在转发数据包的时候是将源目的地址捆绑起来进行查询的。</p></blockquote><h2 id="带标签报文的负载均衡"><a href="#带标签报文的负载均衡" class="headerlink" title="带标签报文的负载均衡"></a>带标签报文的负载均衡</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网络 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 思科—交换 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>LDP</title>
       <link href="/post/79bf7643.html"/>
       <url>/post/79bf7643.html</url>
@@ -77,7 +102,7 @@
       <link href="/post/45c7d1a9.html"/>
       <url>/post/45c7d1a9.html</url>
       
-        <content type="html"><![CDATA[<h1 id="MPLS原理"><a href="#MPLS原理" class="headerlink" title="MPLS原理"></a>MPLS原理</h1><h2 id="MPLS介绍"><a href="#MPLS介绍" class="headerlink" title="MPLS介绍"></a>MPLS介绍</h2><p>现状：由于路由器性能能力已经比较强，MPLS转发增强能力已经不明显。</p><p>全称：Multi-Proctocol Lable Switching 多协议标签交换</p><p>Muti-Proctocol：支持多三层协议，如IP、IPv6、IPX等等</p><p>Lable Switching:在所承载的报文前面加上标签栈，基于标签做转发。</p><span id="more"></span><blockquote><p>MPLS是一种新的转发机制，数据在MPLS网络中是以根据标签信息进行转发</p><p>一般而言，MPLS的标签对应目的地址（路有前缀）</p><p>MPLS依赖IP路由及CEF交换，基于报头头部的标签进行数据转发。</p><p>MPLS能够支持或者说承载多种三层协议。</p></blockquote><h2 id="MPLS构建过程"><a href="#MPLS构建过程" class="headerlink" title="MPLS构建过程"></a>MPLS构建过程</h2><p>1、路由器运行IGP路由协议，维护RIB表及CEF表</p><p>2、路由器运行标签分发协议（LDP），维护LIB表</p><p>3、路由器更新CEF表，同时维护LFIB表（路由器转发依据表）</p><blockquote><p>注：LIB表是建立在CEF表之上的。</p></blockquote><h2 id="MPLS小结"><a href="#MPLS小结" class="headerlink" title="MPLS小结"></a>MPLS小结</h2><ul><li>采用MPLS，可避免ip路由逐跳转发情况，减少对数据包的深入分析，借助标签建立二层的快速转发路径，使得数据沿着一条预先建立的路径快速转发。</li><li>数据包在进入MPLS网络的入口路由器上被进行一次三层查找，而在此后的LSR只是进行简单的标签交换动作，无需进一步分析三层信息</li><li>每个LSR必须在数据转发之前建立好LIB（标签信息库），及LFIB（标签转发信息数据库）。当LSR收到一个标签数据帧时，将数据帧中的标签在LFIB表中进行查找，在根据LFIB表中指示的相关动作多标签进行压入、弹出、交换、移除等动作。</li></ul><h2 id="MPLS架构"><a href="#MPLS架构" class="headerlink" title="MPLS架构"></a>MPLS架构</h2><p><a href="https://imgtu.com/i/oFZsHS"><img src="https://z3.ax1x.com/2021/11/24/oFZsHS.png" alt="oFZsHS.png"></a></p><h3 id="控制层面"><a href="#控制层面" class="headerlink" title="控制层面"></a>控制层面</h3><p>交换三层路由信息（如ospf/ISIS/BGP等）及标签（如TDP（思科私有）、LDP（共有）、BGP（多协议拓展）及RSVP）</p><h3 id="数据层面"><a href="#数据层面" class="headerlink" title="数据层面"></a>数据层面</h3><p>基于标签进行数据转发</p><h2 id="MPLS设备"><a href="#MPLS设备" class="headerlink" title="MPLS设备"></a>MPLS设备</h2><p>LSR标签交换路由器</p><h2 id="FEC转发等价类"><a href="#FEC转发等价类" class="headerlink" title="FEC转发等价类"></a>FEC转发等价类</h2><ul><li>在转发过程中，具有相同处理方式的一组数据，可通过地址、隧道、Qos等方式来标识，通常在一台设备上，对于一个FEC分配相同的标签。</li><li>属于一个FEC的流量具有相同的转发方式、转发路径</li></ul>]]></content>
+        <content type="html"><![CDATA[<h1 id="MPLS原理"><a href="#MPLS原理" class="headerlink" title="MPLS原理"></a>MPLS原理</h1><h2 id="MPLS介绍"><a href="#MPLS介绍" class="headerlink" title="MPLS介绍"></a>MPLS介绍</h2><p>现状：由于路由器性能能力已经比较强，MPLS转发增强能力已经不明显。</p><p>全称：Multi-Proctocol Lable Switching 多协议标签交换</p><p>Muti-Proctocol：支持多三层协议，如IP、IPv6、IPX等等</p><p>Lable Switching:在所承载的报文前面加上标签栈，基于标签做转发。</p><span id="more"></span><blockquote><p>MPLS是一种新的转发机制，数据在MPLS网络中是以根据标签信息进行转发</p><p>一般而言，MPLS的标签对应目的地址（路有前缀）</p><p>MPLS依赖IP路由及CEF交换，基于报头头部的标签进行数据转发。</p><p>MPLS能够支持或者说承载多种三层协议。</p></blockquote><h2 id="MPLS构建过程"><a href="#MPLS构建过程" class="headerlink" title="MPLS构建过程"></a>MPLS构建过程</h2><p>1、路由器运行IGP路由协议，维护RIB表及CEF表</p><p>2、路由器运行标签分发协议（LDP），维护LIB表</p><p>3、路由器更新CEF表，同时维护LFIB表（路由器转发依据表）</p><blockquote><p>注：LIB表是建立在CEF表之上的。</p></blockquote><h2 id="MPLS小结"><a href="#MPLS小结" class="headerlink" title="MPLS小结"></a>MPLS小结</h2><ul><li>采用MPLS，可避免ip路由逐跳转发情况，减少对数据包的深入分析，借助标签建立二层的快速转发路径，使得数据沿着一条预先建立的路径快速转发。</li><li>数据包在进入MPLS网络的入口路由器上被进行一次三层查找，而在此后的LSR只是进行简单的标签交换动作，无需进一步分析三层信息</li><li>每个LSR必须在数据转发之前建立好LIB（标签信息库），及LFIB（标签转发信息数据库）。当LSR收到一个标签数据帧时，将数据帧中的标签在LFIB表中进行查找，在根据LFIB表中指示的相关动作多标签进行压入、弹出、交换、移除等动作。</li></ul><h2 id="MPLS架构"><a href="#MPLS架构" class="headerlink" title="MPLS架构"></a>MPLS架构</h2><p><a href="https://imgtu.com/i/oFZsHS"><img src="https://z3.ax1x.com/2021/11/24/oFZsHS.png" alt="oFZsHS.png"></a></p><h3 id="控制层面"><a href="#控制层面" class="headerlink" title="控制层面"></a>控制层面</h3><p>交换三层路由信息（如ospf/ISIS/BGP等）及标签（如TDP（思科私有）、LDP（共有）、BGP（多协议拓展）及RSVP）</p><h3 id="数据层面"><a href="#数据层面" class="headerlink" title="数据层面"></a>数据层面</h3><p>基于标签进行数据转发</p><h2 id="MPLS设备"><a href="#MPLS设备" class="headerlink" title="MPLS设备"></a>MPLS设备</h2><p>LSR标签交换路由器</p><h2 id="FEC转发等价类"><a href="#FEC转发等价类" class="headerlink" title="FEC转发等价类"></a>FEC转发等价类</h2><ul><li>在转发过程中，具有相同处理方式的一组数据，可通过地址、隧道、Qos等方式来标识，通常在一台设备上，对于一个FEC分配相同的标签。</li><li>属于一个FEC的流量具有相同的转发方式、转发路径</li></ul><h3 id="保留的标签"><a href="#保留的标签" class="headerlink" title="保留的标签"></a>保留的标签</h3><p>标签0-15都是被保留的标签。以下是有特定用途的标签</p><ul><li>​    标签0 显示空标签</li><li>​    标签3 隐式空标签</li><li>​    标签1 路由器报警标签</li><li>​    标签14 OAM报警标签</li></ul><p>其余的标签都是保留的。</p><h2 id="环路避免机制"><a href="#环路避免机制" class="headerlink" title="环路避免机制"></a>环路避免机制</h2><ul><li>LDP的环路避免机制依赖于IGP。因为LFIB表是根据路由表RIB产生FIB表产生的。</li><li>如果出现了环路（一般是IGP出了问题，如静态路由配置错误），标签头中的TTL将防止标签包无止境的转发</li><li>标签头中的TTL与IP头中的TTL是一样的，通常拷贝自IP头中的TTL值（当一个MPLS包进入网络时），这就是MPLS的环路避免机制。</li></ul><p>总结：依赖IGP协议和复制ip报头中TTL值来防止环路。</p>]]></content>
       
       
       <categories>
@@ -135,5 +160,29 @@
     
     
   
+  
+    
+    
+    <entry>
+      <title></title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>tags</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+    </entry>
+    
+    
   
 </search>

@@ -8,23 +8,6 @@
   <link rel="dns-prefetch" href="http://luomochuan.github.io">
   <title>Archives: 2021/11 | 风景的小屋</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
-<script src="//cdn.bootcss.com/pace/1.0.2/pace.min.js"></script>
-  <link href="//cdn.bootcss.com/pace/1.0.2/themes/pink/pace-theme-flash.css" rel="stylesheet">
-    <style>
-    .pace .pace-progress {
-        background: #6d6d6d; /*进度条颜色*/
-        height: 2px;
-    }
-    .pace .pace-progress-inner {
-         box-shadow: 0 0 10px #1E92FB, 0 0 5px     #6d6d6d; /*阴影颜色*/
-    }
-    .pace .pace-activity {
-        border-top-color: #6d6d6d;    /*上边框颜色*/
-        border-left-color: #6d6d6d;    /*左边框颜色*/
-    }
-  </style>
-
   <meta name="description" content="个人博客">
 <meta property="og:type" content="website">
 <meta property="og:title" content="风景的小屋">
@@ -95,8 +78,8 @@
 		<div id="hitokoto"><script>hitokoto()</script></div>
 		</div>
 		<nav>
-			总文章数 6
-			总字数 <span class="post-count">4.4k</span>
+			总文章数 7
+			总字数 <span class="post-count">4.9k</span>
 		</nav>		
 		<nav> <class="header-smart-menu">
     		
@@ -113,6 +96,30 @@
     			
             
 		</nav>
+		
+<script type="text/javascript" src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<form id="search-form"> <!-- 搜索框相关 -->
+    <input type="text" id="local-search-input" name="q" results="0" style="text-align:center" placeholder="站内搜索..." class="search form-control" autocomplete="off" autocorrect="off"/>
+    <i class="fa fa-times" onclick="resetSearch()"></i> <!-- 清空/重置搜索框 -->
+</form>
+<div id="local-search-result"></div> <!-- 搜索结果区 -->
+<p class='no-result'>没找到。。。</p> <!-- 无匹配时显示，注意请在 CSS 中设置默认隐藏 -->
+<script type="text/javascript" src="/search.js"></script>
+<script>
+var inputArea = document.querySelector("#local-search-input");
+var getSearchFile = function(){
+    var path = "/search.xml";
+    searchFunc(path, 'local-search-input', 'local-search-result');
+}
+inputArea.onfocus = function(){ getSearchFile() 
+        $resultArea.bind("DOMNodeRemoved DOMNodeInserted", function(e) {
+            if (!$(e.target).text()) {
+                $(".no-result").show(200);
+            } else {
+              $(".no-result").hide();}
+	      })
+}	
+		
 </script>
 
 		<nav>
@@ -199,6 +206,55 @@
           <a href="/archives/2021" class="archive-year">2021</a>
         </div>
         <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	<a href="/post/8aa65066.html" class="archive-article-date">
+  	<time datetime="2021-11-26T12:18:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-26</time>
+</a>
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/post/8aa65066.html">思科平台交换方式</a>
+    </h1>
+  
+
+        <div class="article-info info-on-right">
+          
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">思科—交换</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+          
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/网络//" class="article-tag-list-link color3">网络</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+
+        </div>
+        <div class="clearfix"></div>
+    </header>
+  </div>
+</article>
+  
+    
     
     <article class="archive-article archive-type-post">
   <div class="archive-article-inner">
@@ -383,60 +439,15 @@
   </div>
 </article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/post/4592b2fd.html" class="archive-article-date">
-  	<time datetime="2021-11-19T12:05:51.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/post/4592b2fd.html">shell</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">归档</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/Linux//" class="article-tag-list-link color1">Linux</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
   
     </div></section>
   
 
     
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/archives/2021/11/page/2/">2</a><a class="extend next" rel="next" href="/archives/2021/11/page/2/"></a>
+    </nav>
+  
 
 
           </div>
@@ -555,6 +566,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">sql必知必会</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color1">思科—交换</a>
               </li>
             
             <div class="clearfix"></div>
