@@ -6,20 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://luomochuan.github.io">
-  <title>思科平台交换方式 | 风景的小屋</title>
+  <title>华为堆叠技术 | 风景的小屋</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="概述：思科平台支持的交换方式有三种：进程交换、快速交换、CEF（基于拓扑的交换）。">
+  <meta name="description" content="华为堆叠技术介绍：概念：堆叠是指将多台交换机设备通过线缆连接后组合在一起，虚拟化成一台设备，是一种横向虚拟化技术。  横向虚拟化：就是接入层交换机组合成一台交换机的技术 纵向虚拟化：核心层和接入层交换机组合在一起。即在核心交换机内添加接入层交换机的管理程序，可以实现管理接入层交换机  可靠组网： ​    1、VRRP+MSTP（传统技术） ​    2、堆叠+链路捆绑（推荐） 厂商的堆叠技术：">
 <meta property="og:type" content="article">
-<meta property="og:title" content="思科平台交换方式">
-<meta property="og:url" content="http://luomochuan.github.io/post/8aa65066.html">
+<meta property="og:title" content="华为堆叠技术">
+<meta property="og:url" content="http://luomochuan.github.io/post/89d83e3b.html">
 <meta property="og:site_name" content="风景的小屋">
-<meta property="og:description" content="概述：思科平台支持的交换方式有三种：进程交换、快速交换、CEF（基于拓扑的交换）。">
+<meta property="og:description" content="华为堆叠技术介绍：概念：堆叠是指将多台交换机设备通过线缆连接后组合在一起，虚拟化成一台设备，是一种横向虚拟化技术。  横向虚拟化：就是接入层交换机组合成一台交换机的技术 纵向虚拟化：核心层和接入层交换机组合在一起。即在核心交换机内添加接入层交换机的管理程序，可以实现管理接入层交换机  可靠组网： ​    1、VRRP+MSTP（传统技术） ​    2、堆叠+链路捆绑（推荐） 厂商的堆叠技术：">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-11-26T12:18:17.000Z">
-<meta property="article:modified_time" content="2021-12-01T06:25:30.301Z">
+<meta property="og:image" content="https://s4.ax1x.com/2021/12/08/o2HARf.png">
+<meta property="og:image" content="https://s4.ax1x.com/2021/12/09/oWa5Yq.png">
+<meta property="article:published_time" content="2021-12-08T05:21:17.000Z">
+<meta property="article:modified_time" content="2021-12-08T16:13:57.967Z">
 <meta property="article:author" content="fengjing">
-<meta property="article:tag" content="思科—交换">
+<meta property="article:tag" content="技术点">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s4.ax1x.com/2021/12/08/o2HARf.png">
   
     <link rel="alternative" href="/atom.xml" title="风景的小屋" type="application/atom+xml">
   
@@ -197,20 +200,20 @@ inputArea.onfocus = function(){ getSearchFile()
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-思科平台交换方式" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-华为堆叠技术" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      思科平台交换方式
+      华为堆叠技术
     </h1>
   
 
         
-        <a href="/post/8aa65066.html" class="archive-article-date">
-  	<time datetime="2021-11-26T12:18:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-11-26</time>
+        <a href="/post/89d83e3b.html" class="archive-article-date">
+  	<time datetime="2021-12-08T05:21:17.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2021-12-08</time>
 </a>
 		
         
@@ -225,7 +228,7 @@ inputArea.onfocus = function(){ getSearchFile()
 	<div id="toc-article" class="toc-article">
 	    <span id="toc-close" class="toc-close" title="隐藏导航" onclick="showBtn();">×</span>
 		<strong class="toc-title">文章目录</strong>
-           <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#CEF%E7%9A%84%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1"><span class="toc-number">1.</span> <span class="toc-text">CEF的负载均衡</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%A6%E6%A0%87%E7%AD%BE%E6%8A%A5%E6%96%87%E7%9A%84%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1"><span class="toc-number">1.1.</span> <span class="toc-text">带标签报文的负载均衡</span></a></li></ol></li></ol>
+           <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8D%8E%E4%B8%BA%E5%A0%86%E5%8F%A0%E6%8A%80%E6%9C%AF"><span class="toc-number">1.</span> <span class="toc-text">华为堆叠技术</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D%EF%BC%9A"><span class="toc-number">1.1.</span> <span class="toc-text">介绍：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%8E%E4%B8%BA%E5%A0%86%E5%8F%A0%E5%8E%9F%E7%90%86"><span class="toc-number">1.2.</span> <span class="toc-text">华为堆叠原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A0%86%E5%8F%A0%E5%BB%BA%E7%AB%8B"><span class="toc-number">1.3.</span> <span class="toc-text">堆叠建立</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A0%86%E5%8F%A0%E5%BB%BA%E7%AB%8B%E6%B5%81%E7%A8%8B"><span class="toc-number">1.3.1.</span> <span class="toc-text">堆叠建立流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%92%E8%89%B2%E9%80%89%E4%B8%BE"><span class="toc-number">1.3.2.</span> <span class="toc-text">角色选举</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%88%E6%9C%AC%E5%90%8C%E6%AD%A5"><span class="toc-number">1.3.3.</span> <span class="toc-text">版本同步</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E5%90%8C%E6%AD%A5"><span class="toc-number">1.3.4.</span> <span class="toc-text">配置同步</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A0%86%E5%8F%A0%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%99%BB%E9%99%86"><span class="toc-number">1.4.</span> <span class="toc-text">堆叠系统的登陆</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A0%86%E5%8F%A0%E5%90%88%E5%B9%B6%E4%B8%8E%E5%88%86%E8%A3%82"><span class="toc-number">1.5.</span> <span class="toc-text">堆叠合并与分裂</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A0%86%E5%8F%A0%E5%90%88%E5%B9%B6"><span class="toc-number">1.5.1.</span> <span class="toc-text">堆叠合并</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A0%86%E5%8F%A0%E5%88%86%E8%A3%82"><span class="toc-number">1.5.2.</span> <span class="toc-text">堆叠分裂</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A0%86%E5%8F%A0%E7%A1%AC%E4%BB%B6%E8%A6%81%E6%B1%82"><span class="toc-number">1.6.</span> <span class="toc-text">堆叠硬件要求</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%8E%E4%B8%BA%E5%A0%86%E5%8F%A0%E9%85%8D%E7%BD%AE"><span class="toc-number">1.7.</span> <span class="toc-text">华为堆叠配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%A0%86%E5%8F%A0%E5%8D%A1%E8%BF%9B%E8%A1%8C%E9%85%8D%E7%BD%AE"><span class="toc-number">1.7.1.</span> <span class="toc-text">使用堆叠卡进行配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E4%B8%9A%E5%8A%A1%E5%8F%A3%E8%BF%9B%E8%A1%8C%E9%85%8D%E7%BD%AE"><span class="toc-number">1.7.2.</span> <span class="toc-text">使用业务口进行配置</span></a></li></ol></li></ol></li></ol>
          </div>
    <script type="text/javascript">
 	function showToc(){
@@ -244,20 +247,127 @@ inputArea.onfocus = function(){ getSearchFile()
       
 <!-- 目录内容结束 -->	  
 	  <div align="center" class="post-count">
-		字数：253字 | 预计阅读时长：1分钟
+		字数：2.1k字 | 预计阅读时长：7分钟
 	  </div>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>概述：思科平台支持的交换方式有三种：进程交换、快速交换、CEF（基于拓扑的交换）。</p>
-<span id="more"></span>
-
-<h1 id="CEF的负载均衡"><a href="#CEF的负载均衡" class="headerlink" title="CEF的负载均衡"></a>CEF的负载均衡</h1><p>基于目的地负载均衡实际上是通过对目的地和源IP地址进行HASH后实现的。也就是说实际上是基于源、目的地址对进行负载均衡。这种方法在大规模网络环境环境中很有用。</p>
+        <h1 id="华为堆叠技术"><a href="#华为堆叠技术" class="headerlink" title="华为堆叠技术"></a>华为堆叠技术</h1><h2 id="介绍："><a href="#介绍：" class="headerlink" title="介绍："></a>介绍：</h2><p>概念：堆叠是指将多台交换机设备通过线缆连接后组合在一起，虚拟化成一台设备，是一种横向虚拟化技术。</p>
 <blockquote>
-<p>什么叫做基于源、目的地址对进行负载均衡？</p>
-<p>当主机A去访问另一台主机B的时候，即使他们中间有多条路径可供选择，他们将始终沿着分组第一次走过的路径进行传递。当主机A去访问同样拥有多条可达路径的主机C时，将会更换另一条路径。也就是说这种模式下，路由器在转发数据包的时候是将源目的地址捆绑起来进行查询的。</p>
+<p>横向虚拟化：就是接入层交换机组合成一台交换机的技术</p>
+<p>纵向虚拟化：核心层和接入层交换机组合在一起。即在核心交换机内添加接入层交换机的管理程序，可以实现管理接入层交换机</p>
 </blockquote>
-<h2 id="带标签报文的负载均衡"><a href="#带标签报文的负载均衡" class="headerlink" title="带标签报文的负载均衡"></a>带标签报文的负载均衡</h2>
+<p>可靠组网：</p>
+<p>​    1、VRRP+MSTP（传统技术）</p>
+<p>​    2、堆叠+链路捆绑（推荐）</p>
+<p>厂商的堆叠技术：</p>
+<p>​    华为：CSS（框式）、iStack（盒式） 两者只是名称不同，其实都一样。</p>
+<p>​    思科：VSS</p>
+<p>​    华三：IRF</p>
+<p>​    锐捷：VSU</p>
+<blockquote>
+<p>注：堆叠技术是厂商的私有技术，用于堆叠的设备一般是同一系列，最后是同一型号。</p>
+</blockquote>
+<h2 id="华为堆叠原理"><a href="#华为堆叠原理" class="headerlink" title="华为堆叠原理"></a>华为堆叠原理</h2><p>堆叠原理示意图</p>
+<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/o2HARf"><img src="https://s4.ax1x.com/2021/12/08/o2HARf.png" alt="o2HARf.png"></a></p>
+<p>堆叠基本概念：</p>
+<table>
+<thead>
+<tr>
+<th>概念</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>主交换机（Master）</td>
+<td>主交换机负责管理整个堆叠域，堆叠域中只有一台主交换机</td>
+</tr>
+<tr>
+<td>备交换机（Standby）</td>
+<td>备交换机是主交换机的备份交换机。当主交换机故障时，备份交换机会接替主交换机的工作。一个堆叠域中只有一台备交换机。</td>
+</tr>
+<tr>
+<td>从交换机（slave）</td>
+<td>出主备交换机外的所有交换机。从交换机主要用于业务转发。从交换机数量越多，堆叠系统转发能力越强。注：华为CE12800系列只能堆叠两台交换机</td>
+</tr>
+<tr>
+<td>堆叠域（domain）</td>
+<td>交换机通过堆叠链路连接在一起形成一个堆叠。这些成员交换机的集合就是一个堆叠域</td>
+</tr>
+<tr>
+<td>堆叠成员ID（memberID）</td>
+<td>堆叠成员交换机的编号，用来标识和管理成员交换机。堆叠中所有成员交换机的堆叠成员ID都是唯一的</td>
+</tr>
+<tr>
+<td>堆叠优先级</td>
+<td>堆叠优先级是成员交换机的一个属性，用于选举角色。</td>
+</tr>
+<tr>
+<td>堆叠物理成员端口</td>
+<td>被配置为堆叠模式的端口，用于堆叠成员交换机之间的连接</td>
+</tr>
+<tr>
+<td>堆叠端口</td>
+<td>一种专用于堆叠的逻辑端口，需要和堆叠物理成员端口绑定。以个堆叠端口可以与一个或多个物理端口绑定，提高链路带宽和可靠性。</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>总结：堆叠域和ospf在以太网中的区域类似。堆叠的交换机优先级最高的是主交换机，次之备份，最后从交换机。</p>
+<p>注意：每台交换机上面的堆叠逻辑端口最多有两个。</p>
+</blockquote>
+<h2 id="堆叠建立"><a href="#堆叠建立" class="headerlink" title="堆叠建立"></a>堆叠建立</h2><h3 id="堆叠建立流程"><a href="#堆叠建立流程" class="headerlink" title="堆叠建立流程"></a>堆叠建立流程</h3><p>堆叠建立的过程主要包括以下四个阶段：</p>
+<ol>
+<li>物理连接及软件配置：根据网络需求，选择适当的连接拓扑，组建堆叠网络，并进行相关软件配置</li>
+<li>主交换机选举：成员交换机之间相互发送竞争报文，并根据选举规则，选出堆叠系统的主交换机</li>
+<li>拓扑收集：主交换机收集搜有队员交换机的信息并计算拓扑。如果成员交换机的堆叠成员ID冲突，主交换机将为冲突交换机重新分配ID</li>
+<li>稳态运行：主交换机将整个堆叠系统的拓扑信息同步给所有成员交换机，并选举一台备交换机。</li>
+</ol>
+<h3 id="角色选举"><a href="#角色选举" class="headerlink" title="角色选举"></a>角色选举</h3><p>规则如下：</p>
+<ol>
+<li>运行转台比较，最先启动的交换机为主交换机</li>
+<li>堆叠优先级比较，优先级最高的为主交换机</li>
+<li>软件版本比较，版本高的为主交换机</li>
+<li>（仅CE12800&amp;12800E涉及）主控板数量比较，有两块主控板的交换机比只有一块主控板的交换机优先竞争主交换机</li>
+<li>桥MAC地址比较，桥MAC地址最小的为主交换机</li>
+</ol>
+<h3 id="版本同步"><a href="#版本同步" class="headerlink" title="版本同步"></a>版本同步</h3><p>堆叠具有版本同步的功能，组成堆叠的成员交换机不需要具有相同的软件版本，只需要版本间兼容即可。主交换机选举完成后，如果其他交换机与主交换机版本不一样，其他交换机会从主交换机上面下载系统软件，然后新的系统软件重启并重新加入堆叠。</p>
+<h3 id="配置同步"><a href="#配置同步" class="headerlink" title="配置同步"></a>配置同步</h3><p>堆叠具有严格的配置文件同步机制，用来保证堆叠中的多台交换机能够像一台设备一样在网络中工作。</p>
+<ul>
+<li>堆叠建立时，成员交换机在启动开始阶段使用各自的配置文件启动。启动完成后，备，从交换机会将本设备的堆叠相关配置合并到主交换机的配置文件中，形成堆叠系统的配置文件</li>
+<li>堆叠正常启动后，主交换机作为堆叠系统的管理节点，负责将用户的配置同步给其他交换机，从而使堆叠内个成员的配置随时保持一致。</li>
+</ul>
+<p>通过即时同步，堆叠中的所有交换机均保持相同的配置文件，及时主交换机出现故障，其他交换机依然能够按照相同的配置文件执行各项功能。</p>
+<h2 id="堆叠系统的登陆"><a href="#堆叠系统的登陆" class="headerlink" title="堆叠系统的登陆"></a>堆叠系统的登陆</h2><p>堆叠建立后，所有网络具有同一配置，所以使用堆叠系统中任何一台的console口登陆均可以。</p>
+<h2 id="堆叠合并与分裂"><a href="#堆叠合并与分裂" class="headerlink" title="堆叠合并与分裂"></a>堆叠合并与分裂</h2><h3 id="堆叠合并"><a href="#堆叠合并" class="headerlink" title="堆叠合并"></a>堆叠合并</h3><p><a target="_blank" rel="noopener" href="https://imgtu.com/i/oWa5Yq"><img src="https://s4.ax1x.com/2021/12/09/oWa5Yq.png" alt="oWa5Yq.png"></a></p>
+<p>​    堆叠合并是指稳定运行的两个堆叠系统合并成一个新的堆叠系统。堆叠系统合并时，两个堆叠系统的主交换机进行竞争，选举出更优的作为新的堆叠系统的主交换机（选举规则则与选举主交换机的规则一致）</p>
+<p>​    竞争胜出的主交换机所在的堆叠系统将保持原有主，备角色和配置不变，业务也不会收到影响；而另一个堆叠系统的所有成员将重新启动后加入新堆叠启动。</p>
+<h3 id="堆叠分裂"><a href="#堆叠分裂" class="headerlink" title="堆叠分裂"></a>堆叠分裂</h3><p>堆叠建立后，主交换机和其他成员交换机之间定时发心跳保温来维持堆叠系统的状态。当堆叠线缆或设备发生故障时将发生故障，可能会导致交换机之间失去通信。</p>
+<p>解释：因为一个堆叠系统所有交换机的IP地址和MAC地址的配置都一样，所以一个堆叠的交换机分裂出去后仍保持原有配置，则网络中会有两台相同的ip和MAC相同放入交换机，则会导致通信故障。针对此问题，提出了堆叠双主检测技术。</p>
+<h2 id="堆叠硬件要求"><a href="#堆叠硬件要求" class="headerlink" title="堆叠硬件要求"></a>堆叠硬件要求</h2><p>​    1、堆叠卡堆叠</p>
+<p>​    堆叠卡堆叠是早期堆叠的形式。它需要有厂商的堆叠卡和堆叠线。</p>
+<p>​    2、业务口堆叠</p>
+<p>​    使用万兆的SP+集成电缆进行堆叠。</p>
+<p>​    3、连接注意事项：</p>
+<p>​        使用堆叠卡进行堆叠连接时需要将堆叠线交叉连接。</p>
+<p>​        业务口堆叠要求逻辑堆叠端口进行交叉连接。</p>
+<h2 id="华为堆叠配置"><a href="#华为堆叠配置" class="headerlink" title="华为堆叠配置"></a>华为堆叠配置</h2><h3 id="使用堆叠卡进行配置"><a href="#使用堆叠卡进行配置" class="headerlink" title="使用堆叠卡进行配置"></a>使用堆叠卡进行配置</h3><p>步骤一：</p>
+<p>​    关闭电源开关，将switch下电，安装模块后插卡，再将设备上电</p>
+<p>步骤二：使能堆叠功能</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sys</span><br><span class="line">sysname switchA</span><br><span class="line">stack enable</span><br><span class="line"></span><br><span class="line">sys</span><br><span class="line">sysname switchB</span><br><span class="line">stack enable</span><br><span class="line">其他同理</span><br></pre></td></tr></table></figure>
+
+<p>注：使用堆叠功能后，需要重启设备才能生效。堆叠功能生效后才能配置堆叠ID和堆叠优先级。</p>
+<p>步骤三：</p>
+<p>​    配置堆叠ID和堆叠优先级。堆叠ID缺省值为0，堆叠优先级缺省值为100</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">stack slot 0 priority 200</span><br><span class="line">stack slot 0 renumber 1</span><br><span class="line">stack slot 0 renumber 2</span><br></pre></td></tr></table></figure>
+
+<h3 id="使用业务口进行配置"><a href="#使用业务口进行配置" class="headerlink" title="使用业务口进行配置"></a>使用业务口进行配置</h3><p>步骤一：配置逻辑堆叠端口并添加物理成员端口。</p>
+<p>配置switchA的业务口G0/0/27、G0/0/28为物理成员端口，并加入到相应的逻辑堆叠端口</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sys</span><br><span class="line">sysname switchA</span><br><span class="line">int stack-port 0/1</span><br><span class="line">port int g0/0/27 enable</span><br><span class="line">quit</span><br><span class="line">int stack-port 0/2</span><br><span class="line">port int g0/0//28 enable</span><br><span class="line">quit</span><br><span class="line"><span class="meta">#</span><span class="bash">另一台交换机同样思路</span></span><br></pre></td></tr></table></figure>
+
+<p>步骤二：配置堆叠ID和堆叠优先级。堆叠ID缺省值为0，堆叠优先级缺省值为100.</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">交换机A</span></span><br><span class="line">stack slot 0 priority 200     #修改主交换机的堆叠优先级为200，大于其他成员优先级。堆叠ID采用缺省值0</span><br><span class="line">stack slot 0 renumber 1		#堆叠优先级采用缺省值100.修改堆叠ID为1</span><br><span class="line">stack slot 0 renumber 2</span><br></pre></td></tr></table></figure>
+
+
       
 
       
@@ -296,7 +406,7 @@ inputArea.onfocus = function(){ getSearchFile()
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">思科—交换</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">技术点</a>
         		</li>
       		
 		</ul>
@@ -363,7 +473,7 @@ inputArea.onfocus = function(){ getSearchFile()
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://luomochuan.github.io/post/8aa65066.html" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://luomochuan.github.io/post/89d83e3b.html" alt="微信分享二维码">
     </div>
 </div>
 
@@ -377,18 +487,18 @@ inputArea.onfocus = function(){ getSearchFile()
   
 <nav id="article-nav">
   
-    <a href="/post/64297bf3.html" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/post/bdcfe473.html" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          Typora使用教程
+          云计算
         
       </div>
     </a>
   
   
-    <a href="/post/79bf7643.html" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">LDP</div>
+    <a href="/post/30bf2354.html" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">nmap使用</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -418,7 +528,7 @@ inputArea.onfocus = function(){ getSearchFile()
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#CEF%E7%9A%84%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1"><span class="toc-number">1.</span> <span class="toc-text">CEF的负载均衡</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%A6%E6%A0%87%E7%AD%BE%E6%8A%A5%E6%96%87%E7%9A%84%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1"><span class="toc-number">1.1.</span> <span class="toc-text">带标签报文的负载均衡</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8D%8E%E4%B8%BA%E5%A0%86%E5%8F%A0%E6%8A%80%E6%9C%AF"><span class="toc-number">1.</span> <span class="toc-text">华为堆叠技术</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%8B%E7%BB%8D%EF%BC%9A"><span class="toc-number">1.1.</span> <span class="toc-text">介绍：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%8E%E4%B8%BA%E5%A0%86%E5%8F%A0%E5%8E%9F%E7%90%86"><span class="toc-number">1.2.</span> <span class="toc-text">华为堆叠原理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A0%86%E5%8F%A0%E5%BB%BA%E7%AB%8B"><span class="toc-number">1.3.</span> <span class="toc-text">堆叠建立</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A0%86%E5%8F%A0%E5%BB%BA%E7%AB%8B%E6%B5%81%E7%A8%8B"><span class="toc-number">1.3.1.</span> <span class="toc-text">堆叠建立流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%A7%92%E8%89%B2%E9%80%89%E4%B8%BE"><span class="toc-number">1.3.2.</span> <span class="toc-text">角色选举</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%88%E6%9C%AC%E5%90%8C%E6%AD%A5"><span class="toc-number">1.3.3.</span> <span class="toc-text">版本同步</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%85%8D%E7%BD%AE%E5%90%8C%E6%AD%A5"><span class="toc-number">1.3.4.</span> <span class="toc-text">配置同步</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A0%86%E5%8F%A0%E7%B3%BB%E7%BB%9F%E7%9A%84%E7%99%BB%E9%99%86"><span class="toc-number">1.4.</span> <span class="toc-text">堆叠系统的登陆</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A0%86%E5%8F%A0%E5%90%88%E5%B9%B6%E4%B8%8E%E5%88%86%E8%A3%82"><span class="toc-number">1.5.</span> <span class="toc-text">堆叠合并与分裂</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A0%86%E5%8F%A0%E5%90%88%E5%B9%B6"><span class="toc-number">1.5.1.</span> <span class="toc-text">堆叠合并</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A0%86%E5%8F%A0%E5%88%86%E8%A3%82"><span class="toc-number">1.5.2.</span> <span class="toc-text">堆叠分裂</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A0%86%E5%8F%A0%E7%A1%AC%E4%BB%B6%E8%A6%81%E6%B1%82"><span class="toc-number">1.6.</span> <span class="toc-text">堆叠硬件要求</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%8E%E4%B8%BA%E5%A0%86%E5%8F%A0%E9%85%8D%E7%BD%AE"><span class="toc-number">1.7.</span> <span class="toc-text">华为堆叠配置</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%A0%86%E5%8F%A0%E5%8D%A1%E8%BF%9B%E8%A1%8C%E9%85%8D%E7%BD%AE"><span class="toc-number">1.7.1.</span> <span class="toc-text">使用堆叠卡进行配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E4%B8%9A%E5%8A%A1%E5%8F%A3%E8%BF%9B%E8%A1%8C%E9%85%8D%E7%BD%AE"><span class="toc-number">1.7.2.</span> <span class="toc-text">使用业务口进行配置</span></a></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
