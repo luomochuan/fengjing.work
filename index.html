@@ -5,13 +5,13 @@
   
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
-  <link rel="dns-prefetch" href="http://luomochuan.github.io">
+  <link rel="dns-prefetch" href="https://luomochuan.github.io">
   <title>风景的小屋</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="个人博客">
 <meta property="og:type" content="website">
 <meta property="og:title" content="风景的小屋">
-<meta property="og:url" content="http://luomochuan.github.io/index.html">
+<meta property="og:url" content="https://luomochuan.github.io/index.html">
 <meta property="og:site_name" content="风景的小屋">
 <meta property="og:description" content="个人博客">
 <meta property="og:locale" content="zh_CN">
@@ -79,7 +79,7 @@
 		</div>
 		<nav>
 			总文章数 14
-			总字数 <span class="post-count">14.3k</span>
+			总字数 <span class="post-count">15.4k</span>
 		</nav>		
 		<nav> <class="header-smart-menu">
     		
@@ -129,7 +129,7 @@ inputArea.onfocus = function(){ getSearchFile()
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" target="_blank" href="https://luomochuan.github.io" title="github"><i class="icon-github"></i></a>
+					<a class="github" target="_blank" href="https://github.com/luomochuan/https-fengjing.work.git" title="github"><i class="icon-github"></i></a>
 		        
 			</div>
 		</nav>
@@ -166,7 +166,7 @@ inputArea.onfocus = function(){ getSearchFile()
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="https://luomochuan.github.io" title="github"><i class="icon-github"></i></a>
+						<a class="github" target="_blank" href="https://github.com/luomochuan/https-fengjing.work.git" title="github"><i class="icon-github"></i></a>
 			        
 				</div>
 			</nav>
@@ -307,58 +307,15 @@ inputArea.onfocus = function(){ getSearchFile()
 
 <!-- 目录内容结束 -->	  
 	  <div align="center" class="post-count">
-		字数：473字 | 预计阅读时长：1分钟
+		字数：1.7k字 | 预计阅读时长：6分钟
 	  </div>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="JavaWeb课程设计"><a href="#JavaWeb课程设计" class="headerlink" title="JavaWeb课程设计"></a>JavaWeb课程设计</h1><h2 id="一，git使用"><a href="#一，git使用" class="headerlink" title="一，git使用"></a>一，git使用</h2><h3 id="1-提交文件"><a href="#1-提交文件" class="headerlink" title="1.提交文件"></a>1.提交文件</h3><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add &lt;文件&gt;  #添加一个文件到暂存区</span><br><span class="line">git add .*		#添加全部文件到暂存区</span><br></pre></td></tr></table></figure>
-
-<p>绿色代表处于暂存区，提交到本地库用commit命令</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m &quot;在a.txt中添加了helloword&quot;</span><br></pre></td></tr></table></figure>
-
-<h3 id="2-查看"><a href="#2-查看" class="headerlink" title="2.查看"></a>2.查看</h3><ol>
-<li>查看状态：命令是git status，可以查看当前状态。绿色代码表在暂存区，红色代表在工作区新建或者修改文件后未同步到暂存区。</li>
-</ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>查看提交记录：命令为git log。可以查看谁提交的，什么时候提交的，提交的是什么</li>
-</ol>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git log					  #查看详细记录</span><br><span class="line">git log --pretty=oneline  #查看第一行</span><br><span class="line">git reflog				  #解决回退版本号后最新改动的版本号无法查看的问题</span><br></pre></td></tr></table></figure>
-
-<h3 id="3-版本控制"><a href="#3-版本控制" class="headerlink" title="3.版本控制"></a>3.版本控制</h3><p>回退版本：git reset</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git reset --hard HEAD`^   #回退一个版本</span><br><span class="line">git reset --hard HEAD`~2  #回退两个版本  ~后面指定回退几个版本</span><br><span class="line">git reset --hard &lt;指定版本号&gt;  #回退到指定版本</span><br></pre></td></tr></table></figure>
-
-<h3 id="4-撤销修改"><a href="#4-撤销修改" class="headerlink" title="4.撤销修改"></a>4.撤销修改</h3><ol>
-<li><p>撤销工作区内容</p>
-<p> 命令：git checkout –&lt;文件名称&gt;</p>
-<blockquote>
-<p>注：只能撤销在工作区的修改，提交到暂存区的话无法进行撤销。另外只能撤销一步</p>
-</blockquote>
- <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout --a.txt</span><br></pre></td></tr></table></figure></li>
-<li><p>撤销暂存区内容</p>
-<p> 命令: git reset HEAD 文件名</p>
- <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git reset HEAD a.txt</span><br></pre></td></tr></table></figure></li>
-</ol>
-<h3 id="5-删除文件"><a href="#5-删除文件" class="headerlink" title="5. 删除文件"></a>5. 删除文件</h3><blockquote>
-<p>一句话，在工作去中先删除相关文件，然后将删除的文件提交的暂存区，接着将暂存区提交到本地库即可。</p>
-</blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">rm -rf b.txt</span><br><span class="line">git add b.txt</span><br><span class="line">git commit -m &quot;删除b.txt&quot;</span><br></pre></td></tr></table></figure>
-
-<h3 id="6-分支合并"><a href="#6-分支合并" class="headerlink" title="6.分支合并"></a>6.分支合并</h3><ol>
-<li><p>解决冲突</p>
-<p> 问题：主分支与分支中相同文件中相同行出现不同内容。例如：主分支中a.txt第五行为aaa而test分支中为bbb.</p>
-</li>
-<li><p>分支创建</p>
-</li>
-<li><p>分支合并</p>
-</li>
-</ol>
-<p>​    命令：git merge &lt;分支名称&gt;</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git merge test</span><br></pre></td></tr></table></figure>
-
-
+        <h1 id="JavaWeb课程设计"><a href="#JavaWeb课程设计" class="headerlink" title="JavaWeb课程设计"></a>JavaWeb课程设计</h1>
+        
+          <a class="article-more-a" href="/post/c2c1a33.html#more">more >></a>
+        
       
 
       
@@ -449,51 +406,10 @@ inputArea.onfocus = function(){ getSearchFile()
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="DHCP服务器"><a href="#DHCP服务器" class="headerlink" title="DHCP服务器"></a>DHCP服务器</h1><h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>DHCP（Dynamic Host Configuration Protocal）动态主机配置协议</p>
-<p>1，使用场景</p>
-<p>​    DHCP通常在局域网中使用，负责对IP地址进行集中管理和分配，是网络中的主机，动态的获得IP地址，网关地址，DNS服务器地址等信息，并提升IP地址的使用率。</p>
-<p>2，工作过程</p>
-<p>​    C/S通信模式。当客户端开机需要获取IP地址时，采用广播的形式进行申请。DHCP协议采用UDP作为传输协议，客户端发送广播消息到服务器68端口，服务器回应广播消息给客户端的67号端口。</p>
-<p>​    DHCP客户端从DHCP服务器获取IP地址，主要通过四个阶段进行：发现、提供、选择、确认。</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sequenceDiagram</span><br><span class="line">	client-&gt;&gt;server: DHCP discovery</span><br><span class="line">	server-&gt;&gt;client: DHCP offer</span><br><span class="line">	client-&gt;&gt;server: DHCP request</span><br><span class="line">	server-&gt;&gt;client: DHCP ACK</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>注：</p>
-<p>DHCP offer阶段：如果网络中有多台DHCP服务器，所有服务器都会向客户端发送offer报文，这时候服务器只是提供一个分配建议，IP地址并没有分配给客户端。</p>
-<p>DHCP request阶段：</p>
-<p>​    客户端收到offer报文后，以广播的方式发送request报文。这个报文的选项字段中会被加入被选中DHCP服务器的IP地址和客户端需要的IP地址。</p>
-<p>客户端只根据第一个收到的offer报文返回request报文。其他DHCP服务器在这次没有成功分配出的IP地址，可以分配给其他客户端不会被占用。</p>
-<p>DHCP ACK阶段：</p>
-<p>​    当服务器收到request报文后，被选中的服务会返回确认报文，确认已将地址分配给客户端。如果收到错误的request报文，服务器会返回NAK报文，表明地址不能够分配给该客户端。没有被客户端选中的DHCP服务器不会被响应。</p>
-<p>​    在客户端收到服务器返回的ACK确认报文后，会一广播的形式发送ARP报文，探测是否有其他客户端正在使用服务器分配的IP地址。如果在规定时间内没有回应，客户端才使用这个IP地址。否则重新进行申请。</p>
-</blockquote>
-<p>3，租约更新</p>
-<p>​    客户端成功获取IP地址后，可以通过发送release报文释放自己的IP地址。当服务器收到release报文后，会回收相应的IP地址并重新分配。地址租期默认8天，但是管理员可以自己进行设置。</p>
-<p>​    当地址租期使用时间超过50%时，客户端会以单播的形式发送request报文来续租IP地址。如果客户端成功收到服务器发送的ACK报文，则会按相应的时长延长IP地址租期，若没收到，则继续使用。当使用时长超过87.5%时，客户端会议广播形式向服务器发送request报文来续租IP地址。如果客户端成功收到ACK报文则按相应时长延长IP地址租期，若没有收到，客户端继续使用，直到使用时长达到100%才会发送release报文来释放这个IP地址。并开始新的申请过程。</p>
-<h2 id="DHCP中继代理与管理"><a href="#DHCP中继代理与管理" class="headerlink" title="DHCP中继代理与管理"></a>DHCP中继代理与管理</h2><p>方法：在连接客户端网络的路由器上开启DHCP中继代理功能，将DHCP广播报文变为单播报文发送出去。并且，将从服务器收到的单播报文变为广播报文返回给客户端。</p>
-<h1 id="DNS"><a href="#DNS" class="headerlink" title="DNS"></a>DNS</h1><h2 id="原理-1"><a href="#原理-1" class="headerlink" title="原理"></a>原理</h2><p>1，什么是DNS？</p>
-<p>DNS（Domain Name System）域名系统</p>
-<p>作用：实现域名与IP地址的相互转换。</p>
-<p>2，DNS域名解析</p>
-<p>引言:因特网实际上只能通过IP地址来寻找服务器。在使用域名访问服务器时，需要先通过DNS，将域名解析为对应的IP地址，然后在通过IP地址访问目的服务器。</p>
-<blockquote>
-<p>注：由于DNS只负责域名解析，并不负责网络通信，因此就算没有DNS，网络仍然可以正常通信，只不过不能使用域名来访问服务器，必须使用IP地址来访问。</p>
-</blockquote>
-<p>4，DNS是如何完成域名解析的？</p>
-<ol>
-<li>主机访问一个网站的域名为 <a target="_blank" rel="noopener" href="http://www.ncwu.edu.cn/">www.ncwu.edu.cn</a> 的服务器时，主机会首先查询本机的hosts文件，如果该文件中有该域名与IP的对应关系，就直接的到解析结果</li>
-<li>如果hosts文件没有相关记录，则根据本机配置的DNS服务器IP地址，到本地域名服务器进行查询。如果该DNS服务器为区域ncwu.edu.cn的授权域名服务器，即负责该区域下的主机的域名解析，可以直接向主机返回权威应答。如果不是该区域的授权域名服务器，则查看缓存中是否有解析记录，如果有返回非权威应答。如果缓存中也没有解析记录，即本地DNS服务器无法解析，则查看是否设有转发域名服务器，如果有则将解析请求转发给转发域名服务器。</li>
-<li>如果没有设有转发域名服务器，解析请求将被发送到根域名服务器</li>
-<li>由于根域名服务器已将cn区域的解析委托给cn域的域名服务器dns.cn，因此根域名服务器值返回dns.cn对应的ip地址</li>
-<li>本地域名服务器根据返回的IP地址向dns.cn发出解析请求</li>
-<li>域名服务器dns.cn已将edu.cn区域的解析，委托给域名服务器dns.edu.cn，因此返回dns.edu.cn对应的IP地址</li>
-<li>本地域名服务器根据返回的ip地址向dns.edu.cn发出解析请求</li>
-<li>域名服务器dns.edu.cn已经将ncwu.edu.cn区域解析，委托给域名服务器dns.ncwu.edu.cn，因此返回dns.ncwu.edu.cn对应的ip地址</li>
-<li>本地域名服务器根据返回的IP地址向dns.ncwu.edu.cn发出解析请求</li>
-<li>域名服务器dns.ncwu.edu.cn是ncwu.edu.cn的授权域名服务器，将查询到 <a target="_blank" rel="noopener" href="http://www.ncwu.edu.cn/">www.ncwu.edu.cn</a> 和对应的IP地址的对应关系向本地域名服务器提供权威应答</li>
-<li>本地域名</li>
-</ol>
-
+        <h1 id="DHCP服务器"><a href="#DHCP服务器" class="headerlink" title="DHCP服务器"></a>DHCP服务器</h1>
+        
+          <a class="article-more-a" href="/post/877b5fe8.html#more">more >></a>
+        
       
 
       
@@ -585,65 +501,9 @@ inputArea.onfocus = function(){ getSearchFile()
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="云计算概述"><a href="#云计算概述" class="headerlink" title="云计算概述"></a>云计算概述</h1><h2 id="云计算是什么"><a href="#云计算是什么" class="headerlink" title="云计算是什么"></a>云计算是什么</h2><p>​    云计算，是一种按使用量付费的模式，这种模式提供可用的、便捷的、按需的网络访问，进入可以配置的计算资源共享池（资源包括网络，服务器，存储，应用软件，服务)，这些资源能够被快速提供，只需投入很少的管理工作，或与服务供应进行很少的交互。</p>
-<h2 id="云计算工作模式"><a href="#云计算工作模式" class="headerlink" title="云计算工作模式"></a>云计算工作模式</h2><ol>
-<li>公有云:厂商为你提供云主机，服务。</li>
-<li>私有云：把公有云那一套搬到我自己的机房内，自己运营，不对外公开。</li>
-<li>混合云：公有云和私有云一起混合使用</li>
-<li>行业云/社区云/政务云：专门定位到一个行业的云服务。</li>
-</ol>
-<h2 id="云计算优势"><a href="#云计算优势" class="headerlink" title="云计算优势"></a>云计算优势</h2><ol>
-<li>按需自助服务（就像水电燃一样）</li>
-<li>广泛的网络接入（手机、电脑、三方终端设备）</li>
-<li>资源池化（屏蔽掉不同厂商的物理硬件差异）</li>
-<li>快速弹性伸缩（根据实际需求自动扩容）</li>
-<li>可计量服务</li>
-</ol>
-<h2 id="云计算的服务模式"><a href="#云计算的服务模式" class="headerlink" title="云计算的服务模式"></a>云计算的服务模式</h2><p>IaaS:基础设施即服务 最底层的硬件资源,主要包括CPU(计算),硬盘(存储),网卡(网络)等.<br>PaaS:平台即服务 就是在第一层的基础上再加上操作系统,数据库等.<br>SaaS:软件即服务 在第三层的基础上装上我们想要的软件,我们可以直接使用.</p>
-<p>DaaS: database as a service 数据库即服务 甲骨文公司私有</p>
-<h2 id="云计算和虚拟化的区别"><a href="#云计算和虚拟化的区别" class="headerlink" title="云计算和虚拟化的区别"></a>云计算和虚拟化的区别</h2><blockquote>
-<p>云计算底层采用虚拟化技术。</p>
-<p>云计算提供一个管理平台对底层的云计算硬件资源进行管控。这些硬件资源上面采用虚拟化技术来运行服务。</p>
-<p>云计算能不能对接物理机？</p>
-<p>能，可以采用裸金属。</p>
-<p>附：云计算公司采用的虚拟化技术都是开源的虚拟化技术。</p>
-</blockquote>
-<h1 id="华为FusionComputer"><a href="#华为FusionComputer" class="headerlink" title="华为FusionComputer"></a>华为FusionComputer</h1><h2 id="fusionsphere套件框架"><a href="#fusionsphere套件框架" class="headerlink" title="fusionsphere套件框架"></a>fusionsphere套件框架</h2><p><a target="_blank" rel="noopener" href="https://imgtu.com/i/X0rVns"><img src="https://s1.ax1x.com/2022/06/06/X0rVns.png" alt="X0rVns.png"></a></p>
-<p>ebackup是指BC manager ebackup</p>
-<p>ultraVR：是一种虚拟化级别的容灾管理设备</p>
-<p>BC Manager EReplication 是私有云容灾设备</p>
-<h2 id="FusionCompute体系"><a href="#FusionCompute体系" class="headerlink" title="FusionCompute体系"></a>FusionCompute体系</h2><h3 id="CNA：computing-node-agent"><a href="#CNA：computing-node-agent" class="headerlink" title="CNA：computing node agent"></a>CNA：computing node agent</h3><p>名称：计算节点代理</p>
-<p>只能物理部署，是安装在物理机上面的计算节点</p>
-<h3 id="VRM：virtual-resource-management"><a href="#VRM：virtual-resource-management" class="headerlink" title="VRM：virtual resource management"></a>VRM：virtual resource management</h3><p>名称： 虚拟资源管理</p>
-<blockquote>
-<p>如何让物理主机具备虚拟化能力？</p>
-<p>直接在物理主机上安装一个操作系统（CNA.iso）。CNA.iso是一个华为定制（裁剪过得）一个Linux操作系统。在管理主机上面安装VRM，vrm.iso也是一个定制Linux系统。</p>
-</blockquote>
-<h4 id="部署方式"><a href="#部署方式" class="headerlink" title="部署方式"></a>部署方式</h4><p>虚拟化部署：直接把VRM安装在CNA节点上面。官方建议如果CNA主机小于50台则进行虚拟化部署。</p>
-<p>物理化部署：部署在物理机上面。如果CNA主机大于50台则进行物理化部署。</p>
-<blockquote>
-<p>注：单个虚拟机的内存不能超过物理机规格。</p>
-</blockquote>
-<h2 id="虚拟化技术分类"><a href="#虚拟化技术分类" class="headerlink" title="虚拟化技术分类"></a>虚拟化技术分类</h2><ol>
-<li><p>基于软件的完全虚拟化 代表是VMware</p>
-<p> 在基于软件的虚拟化中，虚拟机不知道自己是个虚拟机。虚拟机申请内存都是依靠软件来作为中间人申请的。</p>
-</li>
-<li><p>半虚拟化 代表是xen</p>
-<p> 在半虚拟化中，虚拟机知道自己是虚拟机。虚拟机的操作先向嵌入物理机内核的domain申请资源，再由domain调用物理机资源来实现。</p>
-</li>
-<li><p>基于硬件辅助完全虚拟化 即Intel 的VT-X 和AMD的 AMD-V</p>
-<p> 上面两种方法都是基于x86架构指令漏洞来实现的。因此，CPU厂商直接把敏感指令与内核指令不重叠的17条指令集成在CPU内，修补了漏洞。因此，产生了上述方案。</p>
-</li>
-</ol>
-<h2 id="FC集群特性"><a href="#FC集群特性" class="headerlink" title="FC集群特性"></a>FC集群特性</h2><p>1.集群上创建虚拟机，可以使用集群配置，达到负载均衡的效果。</p>
-<p>VCPUs=插槽数、<em>核数、</em>线程数</p>
-<p>2.PV driver 半虚拟化驱动 virtio</p>
-<h3 id="3-内存复用"><a href="#3-内存复用" class="headerlink" title="3.内存复用"></a>3.内存复用</h3><p>内存复用有三种技术：内存置换，内存气泡，内存共享</p>
-<p>内存置换：就是将内存中暂时用不到的数据换入外存中。</p>
-<p>内存气泡：虚拟监视器会在后台检测哪些虚拟机内存是空闲的，会将空闲的内存给到负载过重的，或者创建更多的虚拟机</p>
-<p>内存共享：内存中的数据可以进行共享。对共享内存中的数据我们只能进行读操作，若要进行写操作需要再新开辟一段内存空间。</p>
-<h3 id="4-NUMA"><a href="#4-NUMA" class="headerlink" title="4.NUMA"></a>4.NUMA</h3><p>前身：UMA Uniform memory access 一致性内存访问</p>
-<p>NUMA：Non-Uniform memory access 非一致性内存访问</p>
-
+        
+          <a class="article-more-a" href="/post/bdcfe473.html#more">more >></a>
+        
       
 
       
@@ -735,121 +595,9 @@ inputArea.onfocus = function(){ getSearchFile()
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="华为堆叠技术"><a href="#华为堆叠技术" class="headerlink" title="华为堆叠技术"></a>华为堆叠技术</h1><h2 id="介绍："><a href="#介绍：" class="headerlink" title="介绍："></a>介绍：</h2><p>概念：堆叠是指将多台交换机设备通过线缆连接后组合在一起，虚拟化成一台设备，是一种横向虚拟化技术。</p>
-<blockquote>
-<p>横向虚拟化：就是接入层交换机组合成一台交换机的技术</p>
-<p>纵向虚拟化：核心层和接入层交换机组合在一起。即在核心交换机内添加接入层交换机的管理程序，可以实现管理接入层交换机</p>
-</blockquote>
-<p>可靠组网：</p>
-<p>​    1、VRRP+MSTP（传统技术）</p>
-<p>​    2、堆叠+链路捆绑（推荐）</p>
-<p>厂商的堆叠技术：</p>
-<p>​    华为：CSS（框式）、iStack（盒式） 两者只是名称不同，其实都一样。</p>
-<p>​    思科：VSS</p>
-<p>​    华三：IRF</p>
-<p>​    锐捷：VSU</p>
-<blockquote>
-<p>注：堆叠技术是厂商的私有技术，用于堆叠的设备一般是同一系列，最后是同一型号。</p>
-</blockquote>
-<h2 id="华为堆叠原理"><a href="#华为堆叠原理" class="headerlink" title="华为堆叠原理"></a>华为堆叠原理</h2><p>堆叠原理示意图</p>
-<p><a target="_blank" rel="noopener" href="https://imgtu.com/i/o2HARf"><img src="https://s4.ax1x.com/2021/12/08/o2HARf.png" alt="o2HARf.png"></a></p>
-<p>堆叠基本概念：</p>
-<table>
-<thead>
-<tr>
-<th>概念</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>主交换机（Master）</td>
-<td>主交换机负责管理整个堆叠域，堆叠域中只有一台主交换机</td>
-</tr>
-<tr>
-<td>备交换机（Standby）</td>
-<td>备交换机是主交换机的备份交换机。当主交换机故障时，备份交换机会接替主交换机的工作。一个堆叠域中只有一台备交换机。</td>
-</tr>
-<tr>
-<td>从交换机（slave）</td>
-<td>出主备交换机外的所有交换机。从交换机主要用于业务转发。从交换机数量越多，堆叠系统转发能力越强。注：华为CE12800系列只能堆叠两台交换机</td>
-</tr>
-<tr>
-<td>堆叠域（domain）</td>
-<td>交换机通过堆叠链路连接在一起形成一个堆叠。这些成员交换机的集合就是一个堆叠域</td>
-</tr>
-<tr>
-<td>堆叠成员ID（memberID）</td>
-<td>堆叠成员交换机的编号，用来标识和管理成员交换机。堆叠中所有成员交换机的堆叠成员ID都是唯一的</td>
-</tr>
-<tr>
-<td>堆叠优先级</td>
-<td>堆叠优先级是成员交换机的一个属性，用于选举角色。</td>
-</tr>
-<tr>
-<td>堆叠物理成员端口</td>
-<td>被配置为堆叠模式的端口，用于堆叠成员交换机之间的连接</td>
-</tr>
-<tr>
-<td>堆叠端口</td>
-<td>一种专用于堆叠的逻辑端口，需要和堆叠物理成员端口绑定。以个堆叠端口可以与一个或多个物理端口绑定，提高链路带宽和可靠性。</td>
-</tr>
-</tbody></table>
-<blockquote>
-<p>总结：堆叠域和ospf在以太网中的区域类似。堆叠的交换机优先级最高的是主交换机，次之备份，最后从交换机。</p>
-<p>注意：每台交换机上面的堆叠逻辑端口最多有两个。</p>
-</blockquote>
-<h2 id="堆叠建立"><a href="#堆叠建立" class="headerlink" title="堆叠建立"></a>堆叠建立</h2><h3 id="堆叠建立流程"><a href="#堆叠建立流程" class="headerlink" title="堆叠建立流程"></a>堆叠建立流程</h3><p>堆叠建立的过程主要包括以下四个阶段：</p>
-<ol>
-<li>物理连接及软件配置：根据网络需求，选择适当的连接拓扑，组建堆叠网络，并进行相关软件配置</li>
-<li>主交换机选举：成员交换机之间相互发送竞争报文，并根据选举规则，选出堆叠系统的主交换机</li>
-<li>拓扑收集：主交换机收集搜有队员交换机的信息并计算拓扑。如果成员交换机的堆叠成员ID冲突，主交换机将为冲突交换机重新分配ID</li>
-<li>稳态运行：主交换机将整个堆叠系统的拓扑信息同步给所有成员交换机，并选举一台备交换机。</li>
-</ol>
-<h3 id="角色选举"><a href="#角色选举" class="headerlink" title="角色选举"></a>角色选举</h3><p>规则如下：</p>
-<ol>
-<li>运行转台比较，最先启动的交换机为主交换机</li>
-<li>堆叠优先级比较，优先级最高的为主交换机</li>
-<li>软件版本比较，版本高的为主交换机</li>
-<li>（仅CE12800&amp;12800E涉及）主控板数量比较，有两块主控板的交换机比只有一块主控板的交换机优先竞争主交换机</li>
-<li>桥MAC地址比较，桥MAC地址最小的为主交换机</li>
-</ol>
-<h3 id="版本同步"><a href="#版本同步" class="headerlink" title="版本同步"></a>版本同步</h3><p>堆叠具有版本同步的功能，组成堆叠的成员交换机不需要具有相同的软件版本，只需要版本间兼容即可。主交换机选举完成后，如果其他交换机与主交换机版本不一样，其他交换机会从主交换机上面下载系统软件，然后新的系统软件重启并重新加入堆叠。</p>
-<h3 id="配置同步"><a href="#配置同步" class="headerlink" title="配置同步"></a>配置同步</h3><p>堆叠具有严格的配置文件同步机制，用来保证堆叠中的多台交换机能够像一台设备一样在网络中工作。</p>
-<ul>
-<li>堆叠建立时，成员交换机在启动开始阶段使用各自的配置文件启动。启动完成后，备，从交换机会将本设备的堆叠相关配置合并到主交换机的配置文件中，形成堆叠系统的配置文件</li>
-<li>堆叠正常启动后，主交换机作为堆叠系统的管理节点，负责将用户的配置同步给其他交换机，从而使堆叠内个成员的配置随时保持一致。</li>
-</ul>
-<p>通过即时同步，堆叠中的所有交换机均保持相同的配置文件，及时主交换机出现故障，其他交换机依然能够按照相同的配置文件执行各项功能。</p>
-<h2 id="堆叠系统的登陆"><a href="#堆叠系统的登陆" class="headerlink" title="堆叠系统的登陆"></a>堆叠系统的登陆</h2><p>堆叠建立后，所有网络具有同一配置，所以使用堆叠系统中任何一台的console口登陆均可以。</p>
-<h2 id="堆叠合并与分裂"><a href="#堆叠合并与分裂" class="headerlink" title="堆叠合并与分裂"></a>堆叠合并与分裂</h2><h3 id="堆叠合并"><a href="#堆叠合并" class="headerlink" title="堆叠合并"></a>堆叠合并</h3><p><a target="_blank" rel="noopener" href="https://imgtu.com/i/oWa5Yq"><img src="https://s4.ax1x.com/2021/12/09/oWa5Yq.png" alt="oWa5Yq.png"></a></p>
-<p>​    堆叠合并是指稳定运行的两个堆叠系统合并成一个新的堆叠系统。堆叠系统合并时，两个堆叠系统的主交换机进行竞争，选举出更优的作为新的堆叠系统的主交换机（选举规则则与选举主交换机的规则一致）</p>
-<p>​    竞争胜出的主交换机所在的堆叠系统将保持原有主，备角色和配置不变，业务也不会收到影响；而另一个堆叠系统的所有成员将重新启动后加入新堆叠启动。</p>
-<h3 id="堆叠分裂"><a href="#堆叠分裂" class="headerlink" title="堆叠分裂"></a>堆叠分裂</h3><p>堆叠建立后，主交换机和其他成员交换机之间定时发心跳保温来维持堆叠系统的状态。当堆叠线缆或设备发生故障时将发生故障，可能会导致交换机之间失去通信。</p>
-<p>解释：因为一个堆叠系统所有交换机的IP地址和MAC地址的配置都一样，所以一个堆叠的交换机分裂出去后仍保持原有配置，则网络中会有两台相同的ip和MAC相同放入交换机，则会导致通信故障。针对此问题，提出了堆叠双主检测技术。</p>
-<h2 id="堆叠硬件要求"><a href="#堆叠硬件要求" class="headerlink" title="堆叠硬件要求"></a>堆叠硬件要求</h2><p>​    1、堆叠卡堆叠</p>
-<p>​    堆叠卡堆叠是早期堆叠的形式。它需要有厂商的堆叠卡和堆叠线。</p>
-<p>​    2、业务口堆叠</p>
-<p>​    使用万兆的SP+集成电缆进行堆叠。</p>
-<p>​    3、连接注意事项：</p>
-<p>​        使用堆叠卡进行堆叠连接时需要将堆叠线交叉连接。</p>
-<p>​        业务口堆叠要求逻辑堆叠端口进行交叉连接。</p>
-<h2 id="华为堆叠配置"><a href="#华为堆叠配置" class="headerlink" title="华为堆叠配置"></a>华为堆叠配置</h2><h3 id="使用堆叠卡进行配置"><a href="#使用堆叠卡进行配置" class="headerlink" title="使用堆叠卡进行配置"></a>使用堆叠卡进行配置</h3><p>步骤一：</p>
-<p>​    关闭电源开关，将switch下电，安装模块后插卡，再将设备上电</p>
-<p>步骤二：使能堆叠功能</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sys</span><br><span class="line">sysname switchA</span><br><span class="line">stack enable</span><br><span class="line"></span><br><span class="line">sys</span><br><span class="line">sysname switchB</span><br><span class="line">stack enable</span><br><span class="line">其他同理</span><br></pre></td></tr></table></figure>
-
-<p>注：使用堆叠功能后，需要重启设备才能生效。堆叠功能生效后才能配置堆叠ID和堆叠优先级。</p>
-<p>步骤三：</p>
-<p>​    配置堆叠ID和堆叠优先级。堆叠ID缺省值为0，堆叠优先级缺省值为100</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">stack slot 0 priority 200</span><br><span class="line">stack slot 0 renumber 1</span><br><span class="line">stack slot 0 renumber 2</span><br></pre></td></tr></table></figure>
-
-<h3 id="使用业务口进行配置"><a href="#使用业务口进行配置" class="headerlink" title="使用业务口进行配置"></a>使用业务口进行配置</h3><p>步骤一：配置逻辑堆叠端口并添加物理成员端口。</p>
-<p>配置switchA的业务口G0/0/27、G0/0/28为物理成员端口，并加入到相应的逻辑堆叠端口</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sys</span><br><span class="line">sysname switchA</span><br><span class="line">int stack-port 0/1</span><br><span class="line">port int g0/0/27 enable</span><br><span class="line">quit</span><br><span class="line">int stack-port 0/2</span><br><span class="line">port int g0/0//28 enable</span><br><span class="line">quit</span><br><span class="line"><span class="meta">#</span><span class="bash">另一台交换机同样思路</span></span><br></pre></td></tr></table></figure>
-
-<p>步骤二：配置堆叠ID和堆叠优先级。堆叠ID缺省值为0，堆叠优先级缺省值为100.</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">交换机A</span></span><br><span class="line">stack slot 0 priority 200     #修改主交换机的堆叠优先级为200，大于其他成员优先级。堆叠ID采用缺省值0</span><br><span class="line">stack slot 0 renumber 1		#堆叠优先级采用缺省值100.修改堆叠ID为1</span><br><span class="line">stack slot 0 renumber 2</span><br></pre></td></tr></table></figure>
-
-
+        
+          <a class="article-more-a" href="/post/89d83e3b.html#more">more >></a>
+        
       
 
       
