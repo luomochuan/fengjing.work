@@ -16,7 +16,7 @@
 <meta property="og:description" content="DHCP服务器原理DHCP（Dynamic Host Configuration Protocal）动态主机配置协议 1，使用场景 ​    DHCP通常在局域网中使用，负责对IP地址进行集中管理和分配，是网络中的主机，动态的获得IP地址，网关地址，DNS服务器地址等信息，并提升IP地址的使用率。 2，工作过程 ​    C&#x2F;S通信模式。当客户端开机需要获取IP地址时，采用广播的形式进行申请。DH">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-01-15T07:09:20.000Z">
-<meta property="article:modified_time" content="2022-06-06T10:14:00.517Z">
+<meta property="article:modified_time" content="2022-06-07T02:01:49.973Z">
 <meta property="article:author" content="fengjing">
 <meta property="article:tag" content="win">
 <meta name="twitter:card" content="summary">
@@ -82,7 +82,7 @@
 		</div>
 		<nav>
 			总文章数 14
-			总字数 <span class="post-count">14.2k</span>
+			总字数 <span class="post-count">14.3k</span>
 		</nav>		
 		<nav> <class="header-smart-menu">
     		
@@ -281,7 +281,7 @@ inputArea.onfocus = function(){ getSearchFile()
 </blockquote>
 <p>4，DNS是如何完成域名解析的？</p>
 <ol>
-<li>主机访问一个网站的域名为<a target="_blank" rel="noopener" href="http://www.ncwu.edu.cn的服务器时,主机会首先查询本机的hosts文件,如果该文件中有该域名与ip的对应关系,就直接的到解析结果/">www.ncwu.edu.cn的服务器时，主机会首先查询本机的hosts文件，如果该文件中有该域名与IP的对应关系，就直接的到解析结果</a></li>
+<li>主机访问一个网站的域名为 <a target="_blank" rel="noopener" href="http://www.ncwu.edu.cn/">www.ncwu.edu.cn</a> 的服务器时，主机会首先查询本机的hosts文件，如果该文件中有该域名与IP的对应关系，就直接的到解析结果</li>
 <li>如果hosts文件没有相关记录，则根据本机配置的DNS服务器IP地址，到本地域名服务器进行查询。如果该DNS服务器为区域ncwu.edu.cn的授权域名服务器，即负责该区域下的主机的域名解析，可以直接向主机返回权威应答。如果不是该区域的授权域名服务器，则查看缓存中是否有解析记录，如果有返回非权威应答。如果缓存中也没有解析记录，即本地DNS服务器无法解析，则查看是否设有转发域名服务器，如果有则将解析请求转发给转发域名服务器。</li>
 <li>如果没有设有转发域名服务器，解析请求将被发送到根域名服务器</li>
 <li>由于根域名服务器已将cn区域的解析委托给cn域的域名服务器dns.cn，因此根域名服务器值返回dns.cn对应的ip地址</li>
@@ -290,7 +290,7 @@ inputArea.onfocus = function(){ getSearchFile()
 <li>本地域名服务器根据返回的ip地址向dns.edu.cn发出解析请求</li>
 <li>域名服务器dns.edu.cn已经将ncwu.edu.cn区域解析，委托给域名服务器dns.ncwu.edu.cn，因此返回dns.ncwu.edu.cn对应的ip地址</li>
 <li>本地域名服务器根据返回的IP地址向dns.ncwu.edu.cn发出解析请求</li>
-<li>域名服务器dns.ncwu.edu.cn是ncwu.edu.cn的授权域名服务器，将查询到<a target="_blank" rel="noopener" href="http://www.ncwu.edu.cn和对应的ip地址的对应关系向本地域名服务器提供权威应答/">www.ncwu.edu.cn和对应的IP地址的对应关系向本地域名服务器提供权威应答</a></li>
+<li>域名服务器dns.ncwu.edu.cn是ncwu.edu.cn的授权域名服务器，将查询到 <a target="_blank" rel="noopener" href="http://www.ncwu.edu.cn/">www.ncwu.edu.cn</a> 和对应的IP地址的对应关系向本地域名服务器提供权威应答</li>
 <li>本地域名</li>
 </ol>
 
@@ -654,6 +654,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">思科—交换</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">javaweb</a>
               </li>
             
             <div class="clearfix"></div>
