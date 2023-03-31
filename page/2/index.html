@@ -78,8 +78,8 @@
 		<div id="hitokoto"><script>hitokoto()</script></div>
 		</div>
 		<nav>
-			总文章数 21
-			总字数 <span class="post-count">20.7k</span>
+			总文章数 22
+			总字数 <span class="post-count">21.7k</span>
 		</nav>		
 		<nav> <class="header-smart-menu">
     		
@@ -195,6 +195,81 @@ inputArea.onfocus = function(){ getSearchFile()
           </div>
           <div id="js-content" class="content-ll">
             
+  
+    <article id="post-SQL注入" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="SQL注入"><a href="#SQL注入" class="headerlink" title="SQL注入"></a>SQL注入</h1><h2 id="一库三表六字段"><a href="#一库三表六字段" class="headerlink" title="一库三表六字段"></a>一库三表六字段</h2><p>一库：information_schema</p>
+<p>三表：</p>
+<ol>
+<li>schemata表：存放着所有数据库的名字</li>
+<li>tables表：存放着所有表名字的信息</li>
+<li>columns表：存放着所有字段的名字</li>
+</ol>
+<p>六字段</p>
+<p>schemata表</p>
+<ol>
+<li><p>schemata_name :存放着具体的数据库名</p>
+<p> tables表</p>
+</li>
+<li><p>table_name：存放着具体的表明</p>
+</li>
+<li><p>table_schema：存放着表所在数据库的名字</p>
+<p> columns表</p>
+</li>
+<li><p>column_name:存放着具体的字段名</p>
+</li>
+<li><p>table_name：存放字段所在的表明</p>
+</li>
+<li><p>table_schema：存放字段所在的数据库的名字</p>
+</li>
+</ol>
+<h2 id="2-如何判断注入点"><a href="#2-如何判断注入点" class="headerlink" title="2.如何判断注入点"></a>2.如何判断注入点</h2><h2 id="3-如何判断包裹符"><a href="#3-如何判断包裹符" class="headerlink" title="3.如何判断包裹符"></a>3.如何判断包裹符</h2><h2 id="4-查询数据库中的信息"><a href="#4-查询数据库中的信息" class="headerlink" title="4.查询数据库中的信息"></a>4.查询数据库中的信息</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>;</span><br><span class="line">向<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>中填写我们需要查询的条件</span><br></pre></td></tr></table></figure>
+
+<h2 id="5-延时注入"><a href="#5-延时注入" class="headerlink" title="5.延时注入"></a>5.延时注入</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">语法：if（<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>）</span><br><span class="line">如果<span class="number">1</span>为真，那么就执行<span class="number">2</span>，如果<span class="number">1</span>为假，那么就执行<span class="number">3</span></span><br><span class="line">sleep（<span class="number">5</span>）</span><br><span class="line">if(<span class="number">1</span><span class="operator">=</span><span class="number">1</span>,sleep(<span class="number">3</span>),<span class="number">1</span>)</span><br><span class="line">if(substr(database(),<span class="number">1</span>,<span class="number">1</span>)<span class="operator">=</span><span class="string">&#x27;s&#x27;</span>,sleep(<span class="number">3</span>),<span class="number">3</span>) <span class="comment">--</span></span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/post/0.html">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
   
     <article id="post-政治笔记" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
@@ -761,100 +836,6 @@ inputArea.onfocus = function(){ getSearchFile()
 
 
   
-    <article id="post-win-server" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/post/877b5fe8.html">win-server</a>
-    </h1>
-  
-
-        
-        <a href="/post/877b5fe8.html" class="archive-article-date">
-  	<time datetime="2022-01-15T07:09:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2022-01-15</time>
-</a>
-		
-        
-      </header>
-	  
-<!-- 目录内容 -->
-
-<!-- 目录内容结束 -->	  
-	  <div align="center" class="post-count">
-		字数：1.6k字 | 预计阅读时长：5分钟
-	  </div>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="DHCP服务器"><a href="#DHCP服务器" class="headerlink" title="DHCP服务器"></a>DHCP服务器</h1>
-        
-          <a class="article-more-a" href="/post/877b5fe8.html#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">win</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-	<div class="article-category tagcloud">
-		<i class="icon-book icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="/categories/服务器//" class="article-tag-list-link color4">服务器</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/post/877b5fe8.html">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-  
   
     <nav id="page-nav">
       <a class="extend prev" rel="prev" href="/">上一页</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/">下一页</a>
@@ -1018,6 +999,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">深信服</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">AC</a>
               </li>
             
             <div class="clearfix"></div>

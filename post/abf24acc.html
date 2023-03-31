@@ -8,18 +8,21 @@
   <link rel="dns-prefetch" href="https://luomochuan.github.io">
   <title>深信服防火墙 | 风景的小屋</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="深信服防火墙1.概述 用在内外网之间，隔离过滤流量，实现网络安全的设备。">
+  <meta name="description" content="深信服防火墙概述（AF部分）用在内外网之间，隔离过滤流量，实现网络安全的设备。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="深信服防火墙">
 <meta property="og:url" content="https://luomochuan.github.io/post/abf24acc.html">
 <meta property="og:site_name" content="风景的小屋">
-<meta property="og:description" content="深信服防火墙1.概述 用在内外网之间，隔离过滤流量，实现网络安全的设备。">
+<meta property="og:description" content="深信服防火墙概述（AF部分）用在内外网之间，隔离过滤流量，实现网络安全的设备。">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://s1.ax1x.com/2023/03/31/ppRcMi8.md.png">
+<meta property="og:image" content="https://s1.ax1x.com/2023/03/31/ppRh9II.md.png">
 <meta property="article:published_time" content="2023-03-31T01:16:53.000Z">
-<meta property="article:modified_time" content="2023-03-31T03:05:55.977Z">
+<meta property="article:modified_time" content="2023-03-31T13:33:44.251Z">
 <meta property="article:author" content="fengjing">
 <meta property="article:tag" content="深信服">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s1.ax1x.com/2023/03/31/ppRcMi8.md.png">
   
     <link rel="alternative" href="/atom.xml" title="风景的小屋" type="application/atom+xml">
   
@@ -81,8 +84,8 @@
 		<div id="hitokoto"><script>hitokoto()</script></div>
 		</div>
 		<nav>
-			总文章数 21
-			总字数 <span class="post-count">20.7k</span>
+			总文章数 22
+			总字数 <span class="post-count">21.7k</span>
 		</nav>		
 		<nav> <class="header-smart-menu">
     		
@@ -220,17 +223,15 @@ inputArea.onfocus = function(){ getSearchFile()
 
 <!-- 目录内容结束 -->	  
 	  <div align="center" class="post-count">
-		字数：448字 | 预计阅读时长：1分钟
+		字数：529字 | 预计阅读时长：1分钟
 	  </div>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="深信服防火墙"><a href="#深信服防火墙" class="headerlink" title="深信服防火墙"></a>深信服防火墙</h1><p>1.概述</p>
-<p>用在内外网之间，隔离过滤流量，实现网络安全的设备。</p>
+        <h1 id="深信服防火墙"><a href="#深信服防火墙" class="headerlink" title="深信服防火墙"></a>深信服防火墙</h1><h2 id="概述（AF部分）"><a href="#概述（AF部分）" class="headerlink" title="概述（AF部分）"></a>概述（AF部分）</h2><p>用在内外网之间，隔离过滤流量，实现网络安全的设备。</p>
 <span id="more"></span>
 
-<p>2.防火墙的分类</p>
-<p>   1.按照物理特性划分</p>
+<h2 id="防火墙的分类"><a href="#防火墙的分类" class="headerlink" title="防火墙的分类"></a>防火墙的分类</h2><p>   1.按照物理特性划分</p>
 <p>​     软件防火墙，硬件防火墙</p>
 <p>   2.按性能划分</p>
 <p>​    防火墙一次可以处理多少数据。100M，1000M</p>
@@ -246,15 +247,19 @@ inputArea.onfocus = function(){ getSearchFile()
 <p>应用代理防火墙：主要做应用层防护。</p>
 <p>状态监测防火墙：整体检测网络状态。</p>
 </blockquote>
-<p>2.防火墙的功能</p>
-<p>访问控制；地址转换；网络环境支持；带宽管理功能；入侵检测攻击与防御；高可用性（双机备份，多机备份）；用户认证功能（类似于校园网登陆界面）</p>
-<p>3.性能指标</p>
-<p>​    吞吐量（吞吐量越大，性能越好）</p>
+<h2 id="防火墙的功能"><a href="#防火墙的功能" class="headerlink" title="防火墙的功能"></a>防火墙的功能</h2><p>访问控制；地址转换；网络环境支持；带宽管理功能；入侵检测攻击与防御；高可用性（双机备份，多机备份）；用户认证功能（类似于校园网登陆界面）</p>
+<h2 id="性能指标"><a href="#性能指标" class="headerlink" title="性能指标"></a>性能指标</h2><p>​    吞吐量（吞吐量越大，性能越好）</p>
 <p>​    时延（时延越短越好）</p>
 <p>​    丢包率（丢包率越小，性能越好）</p>
 <p>​    背靠背（背靠背主要是指防火墙缓冲容量的大小。网络上常会出现一些突发的大流量（例如：NFS，备份，路由更新等），而且这样的数据包的丢失可能会产生更多的数据包丢失。强大的缓冲能力可以减小对这种突发网络情况造成的影响）</p>
 <p>​    并发连接数：由于防火墙是针对连接进行处理的，并发连接数目是指防火墙可以同时容纳的最大的连接数目，一个连接就是一个TCP/UDP的访问。</p>
 <p>​    衡量指标：并发连接数指标越大，抗攻击能力也越强。</p>
+<h2 id="下一代防火墙组网方案"><a href="#下一代防火墙组网方案" class="headerlink" title="下一代防火墙组网方案"></a>下一代防火墙组网方案</h2><h3 id="部署模式简介"><a href="#部署模式简介" class="headerlink" title="部署模式简介"></a>部署模式简介</h3><p>一般的部署方式：</p>
+<p> <a target="_blank" rel="noopener" href="https://imgse.com/i/ppRcMi8"><img src="https://s1.ax1x.com/2023/03/31/ppRcMi8.md.png" alt="ppRcMi8.md.png"></a></p>
+<h4 id="一般的部署模式"><a href="#一般的部署模式" class="headerlink" title="一般的部署模式"></a>一般的部署模式</h4><blockquote>
+<p>AF有四种部署模式。它们分别是路由模式，透明模式；混合模式；旁路模式。其中路由模式和混合模式功能最多，旁路模式功能最少。</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://imgse.com/i/ppRh9II"><img src="https://s1.ax1x.com/2023/03/31/ppRh9II.md.png" alt="ppRh9II.md.png"></a></p>
 
       
 
@@ -375,6 +380,15 @@ inputArea.onfocus = function(){ getSearchFile()
   
 <nav id="article-nav">
   
+    <a href="/post/b628e7af.html" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          深信服防火墙AC
+        
+      </div>
+    </a>
+  
   
     <a href="/post/c5a6a264.html" id="article-nav-older" class="article-nav-link-wrap">
       <div class="article-nav-title">ajax</div>
@@ -407,7 +421,7 @@ inputArea.onfocus = function(){ getSearchFile()
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B7%B1%E4%BF%A1%E6%9C%8D%E9%98%B2%E7%81%AB%E5%A2%99"><span class="toc-number">1.</span> <span class="toc-text">深信服防火墙</span></a></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%B7%B1%E4%BF%A1%E6%9C%8D%E9%98%B2%E7%81%AB%E5%A2%99"><span class="toc-number">1.</span> <span class="toc-text">深信服防火墙</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A6%82%E8%BF%B0%EF%BC%88AF%E9%83%A8%E5%88%86%EF%BC%89"><span class="toc-number">1.1.</span> <span class="toc-text">概述（AF部分）</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%98%B2%E7%81%AB%E5%A2%99%E7%9A%84%E5%88%86%E7%B1%BB"><span class="toc-number">1.2.</span> <span class="toc-text">防火墙的分类</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%98%B2%E7%81%AB%E5%A2%99%E7%9A%84%E5%8A%9F%E8%83%BD"><span class="toc-number">1.3.</span> <span class="toc-text">防火墙的功能</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%A7%E8%83%BD%E6%8C%87%E6%A0%87"><span class="toc-number">1.4.</span> <span class="toc-text">性能指标</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8B%E4%B8%80%E4%BB%A3%E9%98%B2%E7%81%AB%E5%A2%99%E7%BB%84%E7%BD%91%E6%96%B9%E6%A1%88"><span class="toc-number">1.5.</span> <span class="toc-text">下一代防火墙组网方案</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2%E6%A8%A1%E5%BC%8F%E7%AE%80%E4%BB%8B"><span class="toc-number">1.5.1.</span> <span class="toc-text">部署模式简介</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%80%E8%88%AC%E7%9A%84%E9%83%A8%E7%BD%B2%E6%A8%A1%E5%BC%8F"><span class="toc-number">1.5.1.1.</span> <span class="toc-text">一般的部署模式</span></a></li></ol></li></ol></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -627,6 +641,10 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">深信服</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">AC</a>
               </li>
             
             <div class="clearfix"></div>

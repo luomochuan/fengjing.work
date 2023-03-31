@@ -4,11 +4,36 @@
   
     
     <entry>
+      <title>深信服防火墙AC</title>
+      <link href="/post/b628e7af.html"/>
+      <url>/post/b628e7af.html</url>
+      
+        <content type="html"><![CDATA[<h1 id="全网行为管理（AC）"><a href="#全网行为管理（AC）" class="headerlink" title="全网行为管理（AC）"></a>全网行为管理（AC）</h1><h2 id="企业运维存在的风险"><a href="#企业运维存在的风险" class="headerlink" title="企业运维存在的风险"></a>企业运维存在的风险</h2><blockquote><p>资产管理混乱；终端违规接入；上网行为不规范；上网缺乏管控；数据泄密风险；事后溯源困难。</p><p>注：资产可以理解为企业的数据以及各种物理设施。例如摄像头，数据库中的数据。</p></blockquote><span id="more"></span><h2 id="全网行为组网方案"><a href="#全网行为组网方案" class="headerlink" title="全网行为组网方案"></a>全网行为组网方案</h2><h3 id="基本操作"><a href="#基本操作" class="headerlink" title="基本操作"></a>基本操作</h3><blockquote><p>登陆设备：</p><p>​    方法一：深信服设备在出厂时，两个端口就自带了默认IP地址。即eth0(LAN)：10.251.251.251/24 , eth1(DMZ)10.252.252.252/24。这样我们可以：</p><p>​      1、使用一根交叉线连接设备和电脑</p><p>​      (1) 如果电脑连接的是设备的eth0口，需先在电脑上配置一个10.251.251.0/24网段的地址（10.251.251.251除外），打开浏览器输入<a href="https://10.251.251.251/">https://10.251.251.251</a> 登录设备网关控制台。</p><p>​      (2) 如果电脑连接的是设备的eth1口，需先在电脑上配置一个10.252.252.0/24网段的地址（10.252.252.252除外），打开浏览器输入<a href="https://10.252.252.252/">https://10.252.252.252</a> 登录设备网关控制台。</p><p>​        2、输入控制台admin帐号登录设备。默认的管理员用户名和密码为admin/admin。</p><p>​    方法二：（如果设备默认IP地址被修改时）</p><ol><li>深信服的AC/SG设备的lan口（默认为eth0）有保留IP地址为128.127.125.252/29.我们只需要将电脑设置在跟他同一个网段后，连接上eth0口即可实现登录。同时，AC/SG设备dmz口(默认eth1定义为dmz)也有保留IP地址128.128.125.252/29，也可以通过交叉线电脑接到设备eth1口，且电脑配置IP为128.128.125.253/29，通过<a href="https://128.128.125.252登录设备控制台./">https://128.128.125.252登录设备控制台。</a></li></ol></blockquote><p>恢复出厂设置（共有4中方法）</p><blockquote><p>​    能正常登录设备时，通过控制台恢复；通过升级系统工具进行恢复</p><p>​    无法正常登录设备时；</p><p>​        使用交叉线将eth0和eth2口短接，然后开机等十分钟，最后拔掉交叉线即可</p><p>​    U盘恢复出厂设置：</p><p>​    (1)新建一个txt文档，将其重命名为reset-cfg.txt，将txt文档拷贝到U盘根目录，U盘格式为FAT32的 </p><p>​    (2)AC上插入U盘，重启设备<br>​    (3)当设备的LED红灯熄灭之后，alram灯闪烁，拔出U盘<br>​    注意事项：U盘恢复出厂配置，需要重启设备</p></blockquote><p>恢复控制台密码：</p><blockquote><p>​    <strong>交叉线恢复控制台密码</strong></p><p>​    1.确保电脑和设备可以通信，访问设备地址，<a href="https://acip/php/rp.php%EF%BC%8C%E5%A6%82%E4%B8%8B%E5%9B%BE%EF%BC%8C%E6%8F%90%E7%A4%BA%E2%80%9C%E5%88%9B%E5%BB%BA%E6%96%87%E4%BB%B6%E6%88%90%E5%8A%9F%EF%BC%8C%E8%AF%B7%E8%BF%9E%E6%8E%A5%E4%BA%A4%E5%8F%89%E7%BA%BF%E5%B9%B6%E9%87%8D%E5%90%AF%E8%AE%BE%E5%A4%87%E2%80%9D%E3%80%82">https://acip/php/rp.php，如下图，提示“创建文件成功，请连接交叉线并重启设备”。</a></p><ol start="2"><li><p>短接eth0和eth2口，然后手动重启设备</p><p><strong>U盘恢复密码</strong></p><p>1.新建一个txt文档，将其重命名为reset-cfg.txt，将txt文档拷贝到U盘根目录，U盘格式为FAT 32的。</p><p>2.确保电脑和设备可以通信，访问设备地址 <a href="https://acip/php/rp.php">https://ACIP/php/rp.</a><a href="https://acip/php/rp.php">php</a></p><p>3.AC上插入U盘，重启设备</p><p>4.当设备的LED红灯熄灭之后，alram灯闪烁即恢复密码成功，拔出U盘。</p><p>注意事项：U盘恢复密码,需要设备重启</p></li></ol></blockquote><h2 id="设备部署模式"><a href="#设备部署模式" class="headerlink" title="设备部署模式"></a>设备部署模式</h2><p>​    AC设备支持，路由模式，旁路模式以及网桥模式。路由模式和旁路模式和AF相同，网桥模式和AF的透明模式相同。</p><h2 id="功能支持列表"><a href="#功能支持列表" class="headerlink" title="功能支持列表"></a>功能支持列表</h2>]]></content>
+      
+      
+      <categories>
+          
+          <category> 深信服防火墙 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> AC </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>深信服防火墙</title>
       <link href="/post/abf24acc.html"/>
       <url>/post/abf24acc.html</url>
       
-        <content type="html"><![CDATA[<h1 id="深信服防火墙"><a href="#深信服防火墙" class="headerlink" title="深信服防火墙"></a>深信服防火墙</h1><p>1.概述</p><p>用在内外网之间，隔离过滤流量，实现网络安全的设备。</p><span id="more"></span><p>2.防火墙的分类</p><p>   1.按照物理特性划分</p><p>​     软件防火墙，硬件防火墙</p><p>   2.按性能划分</p><p>​    防火墙一次可以处理多少数据。100M，1000M</p><p>  3.按照防火墙结构划分</p><blockquote><p>单一主机：只有防火墙功能的设备</p><p>路由集成防火墙：路由器+防火墙</p><p>分布式防火墙：适用于大型网络。</p></blockquote><p>  4.按照防火墙技术划分</p><blockquote><p>包过滤防火墙：</p><p>应用代理防火墙：主要做应用层防护。</p><p>状态监测防火墙：整体检测网络状态。</p></blockquote><p>2.防火墙的功能</p><p>访问控制；地址转换；网络环境支持；带宽管理功能；入侵检测攻击与防御；高可用性（双机备份，多机备份）；用户认证功能（类似于校园网登陆界面）</p><p>3.性能指标</p><p>​    吞吐量（吞吐量越大，性能越好）</p><p>​    时延（时延越短越好）</p><p>​    丢包率（丢包率越小，性能越好）</p><p>​    背靠背（背靠背主要是指防火墙缓冲容量的大小。网络上常会出现一些突发的大流量（例如：NFS，备份，路由更新等），而且这样的数据包的丢失可能会产生更多的数据包丢失。强大的缓冲能力可以减小对这种突发网络情况造成的影响）</p><p>​    并发连接数：由于防火墙是针对连接进行处理的，并发连接数目是指防火墙可以同时容纳的最大的连接数目，一个连接就是一个TCP/UDP的访问。</p><p>​    衡量指标：并发连接数指标越大，抗攻击能力也越强。</p>]]></content>
+        <content type="html"><![CDATA[<h1 id="深信服防火墙"><a href="#深信服防火墙" class="headerlink" title="深信服防火墙"></a>深信服防火墙</h1><h2 id="概述（AF部分）"><a href="#概述（AF部分）" class="headerlink" title="概述（AF部分）"></a>概述（AF部分）</h2><p>用在内外网之间，隔离过滤流量，实现网络安全的设备。</p><span id="more"></span><h2 id="防火墙的分类"><a href="#防火墙的分类" class="headerlink" title="防火墙的分类"></a>防火墙的分类</h2><p>   1.按照物理特性划分</p><p>​     软件防火墙，硬件防火墙</p><p>   2.按性能划分</p><p>​    防火墙一次可以处理多少数据。100M，1000M</p><p>  3.按照防火墙结构划分</p><blockquote><p>单一主机：只有防火墙功能的设备</p><p>路由集成防火墙：路由器+防火墙</p><p>分布式防火墙：适用于大型网络。</p></blockquote><p>  4.按照防火墙技术划分</p><blockquote><p>包过滤防火墙：</p><p>应用代理防火墙：主要做应用层防护。</p><p>状态监测防火墙：整体检测网络状态。</p></blockquote><h2 id="防火墙的功能"><a href="#防火墙的功能" class="headerlink" title="防火墙的功能"></a>防火墙的功能</h2><p>访问控制；地址转换；网络环境支持；带宽管理功能；入侵检测攻击与防御；高可用性（双机备份，多机备份）；用户认证功能（类似于校园网登陆界面）</p><h2 id="性能指标"><a href="#性能指标" class="headerlink" title="性能指标"></a>性能指标</h2><p>​    吞吐量（吞吐量越大，性能越好）</p><p>​    时延（时延越短越好）</p><p>​    丢包率（丢包率越小，性能越好）</p><p>​    背靠背（背靠背主要是指防火墙缓冲容量的大小。网络上常会出现一些突发的大流量（例如：NFS，备份，路由更新等），而且这样的数据包的丢失可能会产生更多的数据包丢失。强大的缓冲能力可以减小对这种突发网络情况造成的影响）</p><p>​    并发连接数：由于防火墙是针对连接进行处理的，并发连接数目是指防火墙可以同时容纳的最大的连接数目，一个连接就是一个TCP/UDP的访问。</p><p>​    衡量指标：并发连接数指标越大，抗攻击能力也越强。</p><h2 id="下一代防火墙组网方案"><a href="#下一代防火墙组网方案" class="headerlink" title="下一代防火墙组网方案"></a>下一代防火墙组网方案</h2><h3 id="部署模式简介"><a href="#部署模式简介" class="headerlink" title="部署模式简介"></a>部署模式简介</h3><p>一般的部署方式：</p><p> <a href="https://imgse.com/i/ppRcMi8"><img src="https://s1.ax1x.com/2023/03/31/ppRcMi8.md.png" alt="ppRcMi8.md.png"></a></p><h4 id="一般的部署模式"><a href="#一般的部署模式" class="headerlink" title="一般的部署模式"></a>一般的部署模式</h4><blockquote><p>AF有四种部署模式。它们分别是路由模式，透明模式；混合模式；旁路模式。其中路由模式和混合模式功能最多，旁路模式功能最少。</p></blockquote><p><a href="https://imgse.com/i/ppRh9II"><img src="https://s1.ax1x.com/2023/03/31/ppRh9II.md.png" alt="ppRh9II.md.png"></a></p>]]></content>
       
       
       <categories>

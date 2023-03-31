@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://luomochuan.github.io/post/b628e7af.html</loc>
+    
+    <lastmod>2023-03-31</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://luomochuan.github.io/post/abf24acc.html</loc>
     
     <lastmod>2023-03-31</lastmod>
@@ -276,6 +283,13 @@
     <priority>0.6</priority>
   </url>
   
+  <url>
+    <loc>https://luomochuan.github.io/tags/AC/</loc>
+    <lastmod>2023-03-31</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
 
   
   <url>
@@ -357,6 +371,13 @@
   
   <url>
     <loc>https://luomochuan.github.io/categories/%E9%98%B2%E7%81%AB%E5%A2%99/</loc>
+    <lastmod>2023-03-31</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://luomochuan.github.io/categories/%E6%B7%B1%E4%BF%A1%E6%9C%8D%E9%98%B2%E7%81%AB%E5%A2%99/</loc>
     <lastmod>2023-03-31</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
